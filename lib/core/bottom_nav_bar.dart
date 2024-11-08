@@ -11,7 +11,7 @@ class BottomNavBar extends StatefulWidget {
 }
 
 class _BottomNavBarState extends State<BottomNavBar> {
-//list is iterated using index
+
   final appScreens = [
     const HomeScreen(),
     const Center(child: Text("Members")),  //chetana
@@ -20,7 +20,6 @@ class _BottomNavBarState extends State<BottomNavBar> {
     MenuPage(),
   ];
 
-//change index for bottomnav
   int _selectedIndex = 0;
   void _onItemTapped(int index) {
     setState(() {
