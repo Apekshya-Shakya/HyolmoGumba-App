@@ -32,6 +32,11 @@ dependencies:
     sdk: flutter
 
 
+    #Utility Packages
+  get: ^4.6.5 
+  flutter_native_splash: ^2.4.1
+
+
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.6
@@ -68,10 +73,20 @@ flutter:
   assets:
     - assets/images/logo.png
     - assets/images/fb.png
+    - assets/images/aani.jpg
+    - assets/images/gumba.jpeg
+    - assets/images/gumba2.jpg
+    - assets/images/google_logo.png
+    - assets/images/fb_logo.png
+    - assets/images/gumba2.jpg
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
     
-
+flutter_native_splash:
+  color: "#FFFFFF"
+  image: assets/images/logo.png
+  android: true
+  ios: true
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
 

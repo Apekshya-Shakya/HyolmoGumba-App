@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hyolmo/pages/home.dart';
 import 'package:hyolmo/pages/login_page.dart';
+import 'package:hyolmo/pages/members.dart';
 import 'package:hyolmo/pages/menu.dart';
 
 class BottomNavBar extends StatefulWidget {
@@ -14,7 +15,8 @@ class _BottomNavBarState extends State<BottomNavBar> {
 
   final appScreens = [
     const HomeScreen(),
-    const Center(child: Text("Members")),  //chetana
+    const Memberspage(),
+   // const Center(child: Text("Members")),  //chetana
    // const Center(child: Text("Account")),
     const LoginPage(),
     MenuPage(),
