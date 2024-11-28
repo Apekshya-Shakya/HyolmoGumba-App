@@ -1,77 +1,82 @@
 import 'package:flutter/material.dart';
+import 'package:hyolmo/constants/constant.dart';
+import 'package:hyolmo/pages/members.dart';
+import 'package:hyolmo/pages/widgets/blogs.dart';
 
 class MenuPage extends StatelessWidget {
+  const MenuPage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 245, 244, 244),
-      body: Center(
-          child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 16),
+      backgroundColor: AppStyles.backgroundColor,
+      body: 
+      SingleChildScrollView(
+       
+        child: Padding(
+          padding: const EdgeInsets.all(16.0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const SizedBox(height: 20,),
-             const TextField(
-                  decoration: InputDecoration(
-                    hintText: 'Search',
-                    hintStyle: TextStyle(color: Colors.grey),
-                    suffixIcon: Icon(Icons.search),
-                    filled: true,
-                    fillColor: Colors.white,
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.all(Radius.circular(5)),
-                      borderSide: BorderSide.none,
-                    ),
+              const SizedBox(height: 20),
+              const TextField(
+                decoration: InputDecoration(
+                  hintText: 'Search',
+                  hintStyle: TextStyle(color: Colors.grey),
+                  suffixIcon: Icon(Icons.search),
+                  filled: true,
+                  fillColor: Colors.white,
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.all(Radius.circular(5)),
+                    borderSide: BorderSide.none,
                   ),
                 ),
-           
-           const SizedBox(height: 10,),
-           const Text("Search for events, information, and members", style: TextStyle(color: Colors.grey),),
-           const SizedBox(height: 20,),
-              // Menu Items
-              Expanded(
-                child: ListView(
-                  children: [
-                    _buildMenuItem('About Us'),
-                    _buildMenuItem('Hyolmo'),
-                    _buildMenuItem('Membership'),
-                    _buildMenuItem('Activities', trailing: Icon(Icons.arrow_drop_down)),
-                    _buildMenuItem('News'),
-                    _buildMenuItem('Media'),
-                    _buildMenuItem('Contact Us'),
-                  ],
-                ),
               ),
-              
-              SizedBox(height: 20),
-            
-              SizedBox(height: 20),
+              const SizedBox(height: 10),
+              const Text(
+                "Search for events, information, and members",
+                style: TextStyle(color: Colors.grey),
+              ),
+              const SizedBox(height: 20),
+
+              // Menu Items with navigation
+              Column(
+                children: [
+                  _buildMenuItem('About Us', Icons.info, context, const Events()),
+                  _buildMenuItem(
+                      'Hyolmo', Icons.language, context, const Events()),
+                  _buildMenuItem(
+                      'Membership', Icons.person_add, context, const Memberspage()),
+                  _buildMenuItem(
+                      'Activities', Icons.event, context, const Events()),
+                  _buildMenuItem('News', Icons.article, context, const Events()),
+                  _buildMenuItem(
+                      'Media', Icons.photo_library, context, const Events()),
+                  _buildMenuItem('Contact Us', Icons.contact_mail, context,
+                      const Events()),
+                ],
+              ),
             ],
-                    ),
           ),
+        ),
       ),
     );
   }
 
-  // Helper widget to create a menu item
-  Widget _buildMenuItem(String title, {Widget? trailing}) {
+  Widget _buildMenuItem(
+      String title, IconData icon, BuildContext context, Widget page) {
     return ListTile(
+      leading: Icon(icon, color: Colors.blue), // Set custom icon and color
       title: Text(
         title,
-        style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
+        style: const TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
       ),
-      trailing: trailing,
       onTap: () {
-        // Define navigation or actions when tapping the menu item
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => page),
+        );
       },
     );
   }
-
-      
-      
-    
-          
-          
-        
-  }
+}

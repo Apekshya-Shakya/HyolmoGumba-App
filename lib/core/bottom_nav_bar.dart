@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hyolmo/constants/constant.dart';
 import 'package:hyolmo/pages/home.dart';
 import 'package:hyolmo/pages/login_page.dart';
 import 'package:hyolmo/pages/members.dart';
@@ -15,10 +16,11 @@ class _BottomNavBarState extends State<BottomNavBar> {
 
   final appScreens = [
     const HomeScreen(),
-    const Memberspage(),
+    const MenuPage(),
    // const Center(child: Text("Members")),  //chetana
    // const Center(child: Text("Account")),
     const LoginPage(),
+    // ignore: prefer_const_constructors
     MenuPage(),
   ];
 
@@ -34,7 +36,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
     return Scaffold(
       
       appBar: AppBar(
-        backgroundColor: Color.fromARGB(255, 71, 12, 22),
+        backgroundColor: AppStyles.primaryColor,
         title: const Text('Hyolmo Social Service Center', style: TextStyle(color: Colors.white),),
         centerTitle: true,
       ),
@@ -42,7 +44,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _selectedIndex,
         onTap: _onItemTapped,
-        selectedItemColor: const Color.fromARGB(226, 121, 24, 24),
+        selectedItemColor: AppStyles.bottomBtnColor,
         unselectedItemColor: Colors.black,
         showSelectedLabels: true,
         items: const [

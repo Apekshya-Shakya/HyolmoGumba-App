@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hyolmo/constants/constant.dart';
 
 class Articles extends StatelessWidget {
   const Articles({super.key});
@@ -7,19 +8,20 @@ class Articles extends StatelessWidget {
   Widget build(BuildContext context) {
     return  Scaffold(
       appBar: AppBar(
-        title: Text("All")
+        backgroundColor: AppStyles.primaryColor,
+        title: const Text("All")
       
 
       ),
        backgroundColor: const Color.fromARGB(255, 245, 244, 244),
       body: ListView(
        
-        children: [
+        children: const [
           SingleChildScrollView(
             child: Column(
               children: [
 
-                //Content inside the article
+              
 
               ],
             ),

@@ -1,15 +1,16 @@
 import 'package:flutter/material.dart';
 
-Color primary = Color.fromARGB(211, 98, 19, 30);
+//Color primary = Color.fromARGB(255, 71, 12, 22);
 //colors
 
 class AppStyles{
-  static Color primaryColor = primary;
-  static Color backgroundColor =Color.fromARGB(238, 253, 251, 251);
-  static Color textBlack= Color.fromARGB(255, 2, 0, 0);
-  static Color textGrey = Color.fromARGB(255, 109, 113, 117);
+  static Color primaryColor =  const Color.fromARGB(255, 71, 12, 22); //no idea why this color is not changing
+  static Color bottomBtnColor = const Color.fromARGB(226, 121, 24, 24);
+  static Color backgroundColor =const Color.fromARGB(238, 253, 251, 251);
+  static Color textBlack= const Color.fromARGB(255, 2, 0, 0);
+  static Color textGrey = const Color.fromARGB(255, 109, 113, 117);
   static Color mainWhite= Colors.white;
-  static Color crazycolor= Color.fromARGB(255, 24, 198, 143);
+  static Color crazycolor= const Color.fromARGB(255, 24, 198, 143);
 
 
 // texts
@@ -20,13 +21,13 @@ static TextStyle heading1 = TextStyle(
   color: AppStyles.textBlack,
 );
 // titles2
-static TextStyle heading2 = TextStyle(
+static TextStyle heading2 = const TextStyle(
   fontSize: 22,
   fontWeight: FontWeight.bold
 );
 
 //subheadings
-static TextStyle subheading = TextStyle(
+static TextStyle subheading = const TextStyle(
   fontSize: 20,
   fontWeight: FontWeight.bold
 );
@@ -40,13 +41,13 @@ static TextStyle subheading2 = TextStyle(
 
 
 //text
-static TextStyle text = TextStyle(
+static TextStyle text = const TextStyle(
   fontSize: 18,
   fontWeight: FontWeight.normal
 );
 
 //search, 
-static TextStyle subtext = TextStyle(
+static TextStyle subtext = const TextStyle(
   fontSize: 14,
   fontWeight: FontWeight.normal
 );

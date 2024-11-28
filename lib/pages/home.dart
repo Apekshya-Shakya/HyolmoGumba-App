@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:hyolmo/constants/constant.dart';
 import 'package:hyolmo/pages/articles.dart';
 import 'package:hyolmo/pages/widgets/blogs.dart';
-import 'package:hyolmo/pages/widgets/loginButton.dart';
 import 'package:hyolmo/widgets/info_widget.dart';
 import 'package:hyolmo/widgets/title_view.dart';
 
@@ -11,15 +11,17 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: const Color.fromARGB(255, 245, 244, 244),
+        // appBar: AppBar(),
+        backgroundColor: AppStyles.backgroundColor,
         body: SingleChildScrollView(
+          scrollDirection: Axis.vertical,
           child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 16),
+            padding: const EdgeInsets.all(16),
             child:
-                Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-              const SizedBox(
-                height: 20,
-              ),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start, 
+                  children: [
+             // const SizedBox(height: 20),
               const TextField(
                 decoration: InputDecoration(
                   hintText: 'Search',
@@ -33,71 +35,67 @@ class HomeScreen extends StatelessWidget {
                   ),
                 ),
               ),
-              const SizedBox(
-                height: 10,
-              ),
+              const SizedBox(height: 10),
               const Text(
                 "Search for events, information, and members",
                 style: TextStyle(color: Colors.grey),
               ),
-              const SizedBox(
-                height: 20,
-              ),
+              const SizedBox(height: 20),
+
               Viewtitle(
                 bigText: "Information",
                 smallText: "View all",
                 func: () => Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (BuildContext context) => const Articles(),
-                )),
+                    context,
+                    MaterialPageRoute(
+                      builder: (BuildContext context) => const Articles(),
+                    )),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
-              InfoSection(),
-              SizedBox(
+              const InfoSection(),
+              const SizedBox(
                 height: 30,
               ),
               Viewtitle(
                 bigText: "Upcoming Events",
                 smallText: "View all",
-                func: () {
-                },
+                func: () {},
               ),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
 
-              SingleChildScrollView(scrollDirection: Axis.horizontal,
-              child: Row(
-                children: [
-                  Events(),
-                  Events(),
-                  Events(),
-                  Events(),
-                  Events(),
-                  Events(),
+              const SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  child: Row(
+                    children: [
+                      Events(),
+                      Events(),
+                      Events(),
+                      Events(),
+                      Events(),
+                      Events(),
 
-                  //7:27 // json mapping baki cha
-                ],
-              )),
-              SizedBox(
+                      //7:27 // json mapping baki cha
+                    ],
+                  )),
+              const SizedBox(
                 height: 30,
               ),
               Viewtitle(
                 bigText: "Gallery",
                 smallText: "View all",
-                func: () {
-                },
+                func: () {},
               ),
-              SizedBox(height:10),
-               Image.asset(
-                  'assets/images/aani.jpg',
+              const SizedBox(height: 10),
+              Image.asset(
+                'assets/images/aani.jpg',
 
-                   height: 300,
-                  // width: 150,
-                ),
+                height: 300,
+                // width: 150,
+              ),
               // Container(
               //   height: 300,
               //   width: double.infinity,
@@ -105,15 +103,15 @@ class HomeScreen extends StatelessWidget {
               //     borderRadius: BorderRadius.circular(10),
               //     color: Colors.blue
               //   ),
-                
-          //    ),
 
-              SizedBox(height: 20,),
+              //    ),
+
+              const SizedBox(
+                height: 20,
+              ),
               // ButtonWidget(),
               // SizedBox(height:10)
             ]),
-
-            
           ),
         ));
   }

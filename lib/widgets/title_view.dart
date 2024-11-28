@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:hyolmo/constants/constant.dart';
-import 'package:hyolmo/pages/articles.dart';
 
 class Viewtitle extends StatelessWidget {
   const Viewtitle({Key? key, required this.bigText, required this.smallText, required this.func});
