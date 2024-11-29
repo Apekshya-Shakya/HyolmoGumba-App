@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hyolmo/constants/constant.dart';
 
 class MembersPage extends StatelessWidget {
   const MembersPage({super.key});
@@ -70,66 +71,80 @@ class MembersPage extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Organization Members'),
+        
+        title: const Text('Organization Members', style: TextStyle(color: Colors.white),),
+        backgroundColor: AppStyles.primaryColor,
+          iconTheme: const IconThemeData(color: Colors.white),
       ),
-      body: Column(
-        children: [
-          // Search bar
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: TextField(
-              decoration: InputDecoration(
-                hintText: 'Search for members...',
-                prefixIcon: const Icon(Icons.search),
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(10),
+      backgroundColor: AppStyles.backgroundColor,
+      
+     
+      body: 
+      Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Column(
+          children: [
+            // Search bar
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+               child:  TextField(
+                  decoration: InputDecoration(
+                    hintText: 'Search',
+                    hintStyle: TextStyle(color: Colors.grey),
+                    suffixIcon: Icon(Icons.search),
+                    filled: true,
+                    fillColor: Colors.white,
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.all(Radius.circular(5)),
+                      borderSide: BorderSide.none,
+                    ),
+                  ),
                 ),
+            ),
+            // Members list
+            Expanded(
+              child: ListView.builder(
+                itemCount: members.length,
+                itemBuilder: (context, index) {
+                  final member = members[index];
+                  return Card(
+                    margin:
+                        const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                    child: ListTile(
+                      leading: const CircleAvatar(
+                        backgroundImage: AssetImage("assets/images/gumba2.jpg"),
+                        radius: 25,
+                      ),
+                      title: Text(member['name']!),
+                      subtitle: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text('Post: ${member['post']}'),
+                          Text(
+                            'Village: ${member['village']}',
+                            style:
+                                TextStyle(color: Colors.grey[600], fontSize: 12),
+                          ),
+                        ],
+                      ),
+                      isThreeLine: true,
+                      trailing: const Icon(Icons.arrow_forward_ios, size: 16),
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) =>
+                                MemberDetailPage(member: member),
+                          ),
+                        );
+                      },
+                    ),
+                  );
+                },
               ),
             ),
-          ),
-          // Members list
-          Expanded(
-            child: ListView.builder(
-              itemCount: members.length,
-              itemBuilder: (context, index) {
-                final member = members[index];
-                return Card(
-                  margin:
-                      const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
-                  child: ListTile(
-                    leading: CircleAvatar(
-                      backgroundImage: AssetImage(member['photo']!),
-                      radius: 25,
-                    ),
-                    title: Text(member['name']!),
-                    subtitle: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text('Post: ${member['post']}'),
-                        Text(
-                          'Village: ${member['village']}',
-                          style:
-                              TextStyle(color: Colors.grey[600], fontSize: 12),
-                        ),
-                      ],
-                    ),
-                    isThreeLine: true,
-                    trailing: const Icon(Icons.arrow_forward_ios, size: 16),
-                    onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) =>
-                              MemberDetailPage(member: member),
-                        ),
-                      );
-                    },
-                  ),
-                );
-              },
-            ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
@@ -144,17 +159,20 @@ class MemberDetailPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(member['name']!),
+        title: Text(member['name']!, style: TextStyle(color: Colors.white),),
+        backgroundColor: AppStyles.primaryColor,
+          iconTheme: const IconThemeData(color: Colors.white),
       ),
+      
       body: Column(
         children: [
           // Top section with image
           Container(
-            color: Colors.grey[200],
+            color: AppStyles.backgroundColor,
             width: double.infinity,
             padding: const EdgeInsets.symmetric(vertical: 20),
-            child: CircleAvatar(
-              backgroundImage: AssetImage(member['photo']!),
+            child: const CircleAvatar(
+              backgroundImage: AssetImage("assets/images/gumba2.jpg"),
               radius: 50,
             ),
           ),
@@ -201,9 +219,9 @@ class MemberDetailPage extends StatelessWidget {
   }
 }
 
-void main() {
-  runApp(const MaterialApp(
-    debugShowCheckedModeBanner: false,
-    home: MembersPage(),
-  ));
-}
+// void main() {
+//   runApp(const MaterialApp(
+//     debugShowCheckedModeBanner: false,
+//     home: MembersPage(),
+//   ));
+// }

@@ -3,6 +3,7 @@
 import 'package:get/get.dart';
 import 'package:flutter/material.dart';
 import 'package:hyolmo/constants/constant.dart';
+import 'package:hyolmo/pages/members.dart';
 import 'package:hyolmo/pages/options.dart';
 import 'package:hyolmo/pages/signup.dart';
 
@@ -95,7 +96,16 @@ class _LoginPageState extends State<LoginPage> {
                   SizedBox(
                       width: double.infinity,
                       child: ElevatedButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) =>
+                                MembersPage()
+                          ),
+                        );
+                        
+                        },
                         style: ElevatedButton.styleFrom(
                             elevation: 0,
                             backgroundColor: Colors.blue,
@@ -121,7 +131,7 @@ class _LoginPageState extends State<LoginPage> {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => const OptionsPage()));
+                                  builder: (context) => const SignUpPage()));
                         },
                         style: OutlinedButton.styleFrom(
                             elevation: 0,

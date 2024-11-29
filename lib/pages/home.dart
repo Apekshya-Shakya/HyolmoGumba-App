@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hyolmo/constants/constant.dart';
 import 'package:hyolmo/pages/articles.dart';
-import 'package:hyolmo/pages/widgets/blogs.dart';
+import 'package:hyolmo/widgets/events.dart';
 import 'package:hyolmo/widgets/info_widget.dart';
 import 'package:hyolmo/widgets/title_view.dart';
 
@@ -11,7 +11,7 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        // appBar: AppBar(),
+        
         backgroundColor: AppStyles.backgroundColor,
         body: SingleChildScrollView(
           scrollDirection: Axis.vertical,
@@ -22,6 +22,7 @@ class HomeScreen extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start, 
                   children: [
              // const SizedBox(height: 20),
+             //Search
               const TextField(
                 decoration: InputDecoration(
                   hintText: 'Search',

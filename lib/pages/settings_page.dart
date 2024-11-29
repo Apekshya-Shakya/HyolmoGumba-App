@@ -3,24 +3,26 @@ import 'package:hyolmo/constants/constant.dart';
 import 'package:hyolmo/pages/articles.dart';
 import 'package:hyolmo/pages/options.dart';
 import 'package:hyolmo/widgets/events.dart';
+import 'package:hyolmo/widgets/searchbar.dart';
 
-class MenuPage extends StatelessWidget {
-  const MenuPage({super.key});
+class SettingsPage extends StatelessWidget {
+  const SettingsPage({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppStyles.backgroundColor,
-      body: 
-      SingleChildScrollView(
-       
+      body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.all(16.0),
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
+          
             children: [
-              
-              const TextField(
+              Column(
+                 crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  //const SizedBox(height: 20),
+                  const TextField(
                 decoration: InputDecoration(
                   hintText: 'Search',
                   hintStyle: TextStyle(color: Colors.grey),
@@ -38,22 +40,19 @@ class MenuPage extends StatelessWidget {
                 "Search for events, information, and members",
                 style: TextStyle(color: Colors.grey),
               ),
-              const SizedBox(height: 20),
-
-              // Menu Items with navigation
-              Column(
-                children: [
-                  _buildMenuItem('About Us', Icons.info, context, const Articles()),
-                  _buildMenuItem(
-                      'Hyolmo', Icons.language, context, const Articles()),
-                  _buildMenuItem(
-                      'Membership', Icons.person_add, context, const OptionsPage()),
-                  _buildMenuItem(
-                      'Activities', Icons.event, context, const Articles()),
-                  _buildMenuItem('News', Icons.article, context, const Articles()),
-                  _buildMenuItem(
-                      'Media', Icons.photo_library, context, const Articles()),
-                  _buildMenuItem('Contact Us', Icons.contact_mail, context,
+               const SizedBox(
+                    height: 20,
+                  ),
+                  const Text(
+                    "Settings",
+                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 24),
+                  ),
+                  const SizedBox(height: 20,),
+                  _buildMenuItem('Account Settings', Icons.info, context,
+                      const Articles()),
+                  _buildMenuItem('Change Passwords', Icons.language, context,
+                      const Articles()),
+                  _buildMenuItem('Notifications', Icons.person_add, context,
                       const Articles()),
                 ],
               ),
@@ -67,8 +66,7 @@ class MenuPage extends StatelessWidget {
   Widget _buildMenuItem(
       String title, IconData icon, BuildContext context, Widget page) {
     return ListTile(
-      leading: Icon(icon, color: AppStyles.bottomBtnColor
-      ), 
+      leading: Icon(icon, color: AppStyles.bottomBtnColor),
       title: Text(
         title,
         style: const TextStyle(fontSize: 18, fontWeight: FontWeight.w500),

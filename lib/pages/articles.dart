@@ -9,10 +9,12 @@ class Articles extends StatelessWidget {
     return  Scaffold(
       appBar: AppBar(
         backgroundColor: AppStyles.primaryColor,
-        title: const Text("All")
+        title: const Text("All", style: TextStyle(color: Colors.white),),
+          iconTheme: const IconThemeData(color: Colors.white),),
+        
       
 
-      ),
+    
        backgroundColor: const Color.fromARGB(255, 245, 244, 244),
       body: ListView(
        

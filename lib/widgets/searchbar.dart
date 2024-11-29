@@ -5,7 +5,7 @@ class SearchWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Row(
+    return  const Row(
       children: [
          TextField(
                 decoration: InputDecoration(

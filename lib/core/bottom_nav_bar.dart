@@ -4,6 +4,7 @@ import 'package:hyolmo/pages/home.dart';
 import 'package:hyolmo/pages/login_page.dart';
 import 'package:hyolmo/pages/options.dart';
 import 'package:hyolmo/pages/menu.dart';
+import 'package:hyolmo/pages/settings_page.dart';
 
 class BottomNavBar extends StatefulWidget {
   const BottomNavBar({super.key});
@@ -17,11 +18,8 @@ class _BottomNavBarState extends State<BottomNavBar> {
   final appScreens = [
     const HomeScreen(),
     const MenuPage(),
-   // const Center(child: Text("Members")),  //chetana
-   // const Center(child: Text("Account")),
     const LoginPage(),
-    // ignore: prefer_const_constructors
-    MenuPage(),
+    const SettingsPage(),
   ];
 
   int _selectedIndex = 0;
@@ -39,6 +37,8 @@ class _BottomNavBarState extends State<BottomNavBar> {
         backgroundColor: AppStyles.primaryColor,
         title: const Text('Hyolmo Social Service Center', style: TextStyle(color: Colors.white),),
         centerTitle: true,
+        
+        
       ),
       body: appScreens[_selectedIndex],
       bottomNavigationBar: BottomNavigationBar(
@@ -54,9 +54,9 @@ class _BottomNavBarState extends State<BottomNavBar> {
           ),
           BottomNavigationBarItem(
               icon: Icon(
-                Icons.switch_account_rounded,
+                Icons.menu,
               ),
-              label: 'Members'),
+              label: 'Menu'),
           BottomNavigationBarItem(
               icon: Icon(
                 Icons.account_circle_sharp,
@@ -64,9 +64,9 @@ class _BottomNavBarState extends State<BottomNavBar> {
               label: 'Account'),
           BottomNavigationBarItem(
               icon: Icon(
-                Icons.menu,
+                Icons.settings,
               ),
-              label: 'Menu'),
+              label: 'Settings'),
         ],
       ),
     );
