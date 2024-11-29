@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hyolmo/constants/constant.dart';
 import 'package:hyolmo/pages/members.dart';
+import 'package:hyolmo/pages/options.dart';
 import 'package:hyolmo/pages/widgets/blogs.dart';
 
 class MenuPage extends StatelessWidget {
@@ -46,7 +47,7 @@ class MenuPage extends StatelessWidget {
                   _buildMenuItem(
                       'Hyolmo', Icons.language, context, const Events()),
                   _buildMenuItem(
-                      'Membership', Icons.person_add, context, const Memberspage()),
+                      'Membership', Icons.person_add, context, const MembersPage()),
                   _buildMenuItem(
                       'Activities', Icons.event, context, const Events()),
                   _buildMenuItem('News', Icons.article, context, const Events()),
