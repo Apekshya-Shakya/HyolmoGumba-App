@@ -10,8 +10,12 @@ class SignUpPage extends StatefulWidget {
 }
 
 class _SignUpPageState extends State<SignUpPage> {
-  
-  final List<String> membershipTypes = ['House-hold Members', 'Institutional Members', 'Life Members', 'General Members'];
+  final List<String> membershipTypes = [
+    'House-hold Members',
+    'Institutional Members',
+    'Life Members',
+    'General Members'
+  ];
 
   // Selected membership type
   String? selectedMembership;
@@ -22,9 +26,9 @@ class _SignUpPageState extends State<SignUpPage> {
       appBar: AppBar(
         backgroundColor: AppStyles.primaryColor,
         elevation: 0,
-          iconTheme: const IconThemeData(color: Colors.white),
+        iconTheme: const IconThemeData(color: Colors.white),
       ),
-      backgroundColor: Colors.white,
+      backgroundColor: AppStyles.backgroundColor,
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.all(20.0),
@@ -180,13 +184,10 @@ class _SignUpPageState extends State<SignUpPage> {
                       width: double.infinity,
                       child: ElevatedButton(
                         onPressed: () {
-                          
-                           Navigator.push(
+                          Navigator.push(
                               context,
                               MaterialPageRoute(
                                   builder: (context) => const LoginPage()));
-                        
-                          
                         },
                         style: ElevatedButton.styleFrom(
                           elevation: 0,

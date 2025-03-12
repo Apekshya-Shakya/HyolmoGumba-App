@@ -14,7 +14,6 @@ class BottomNavBar extends StatefulWidget {
 }
 
 class _BottomNavBarState extends State<BottomNavBar> {
-
   final appScreens = [
     const HomeScreen(),
     const MenuPage(),
@@ -32,13 +31,13 @@ class _BottomNavBarState extends State<BottomNavBar> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      
       appBar: AppBar(
         backgroundColor: AppStyles.primaryColor,
-        title: const Text('Hyolmo Social Service Center', style: TextStyle(color: Colors.white),),
+        title: const Text(
+          'Hyolmo Social Service Center',
+          style: TextStyle(color: Colors.white),
+        ),
         centerTitle: true,
-        
-        
       ),
       body: appScreens[_selectedIndex],
       bottomNavigationBar: BottomNavigationBar(
@@ -52,11 +51,11 @@ class _BottomNavBarState extends State<BottomNavBar> {
             icon: Icon(Icons.home),
             label: 'Home',
           ),
-          BottomNavigationBarItem(
-              icon: Icon(
-                Icons.menu,
-              ),
-              label: 'Menu'),
+          // BottomNavigationBarItem(
+          //     icon: Icon(
+          //       Icons.menu,
+          //     ),
+          //     label: 'Menu'),
           BottomNavigationBarItem(
               icon: Icon(
                 Icons.account_circle_sharp,

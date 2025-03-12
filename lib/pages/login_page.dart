@@ -45,6 +45,7 @@ class _LoginPageState extends State<LoginPage> {
               ),
               Form(
                   child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
                   TextFormField(
                       decoration: InputDecoration(
@@ -94,38 +95,34 @@ class _LoginPageState extends State<LoginPage> {
 
                   //Sign in
                   SizedBox(
-                      width: double.infinity,
+                      // width: double.infinity,
                       child: ElevatedButton(
-                        onPressed: () {
-                          Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) =>
-                                MembersPage()
-                          ),
-                        );
-                        
-                        },
-                        style: ElevatedButton.styleFrom(
-                            elevation: 0,
-                            backgroundColor: Colors.blue,
-                            disabledBackgroundColor: Colors.grey,
-                            side: const BorderSide(color: Colors.blue),
-                            padding: const EdgeInsets.symmetric(vertical: 18),
-                            textStyle: const TextStyle(
-                                fontSize: 16, fontWeight: FontWeight.w600),
-                            shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(12))),
-                        child: const Text(
-                          "Sign in",
-                          style: TextStyle(color: Colors.white),
-                        ),
-                      )),
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => MembersPage()),
+                      );
+                    },
+                    style: ElevatedButton.styleFrom(
+                        elevation: 0,
+                        backgroundColor: Colors.blue,
+                        disabledBackgroundColor: Colors.grey,
+                        side: const BorderSide(color: Colors.blue),
+                        padding: const EdgeInsets.symmetric(vertical: 18),
+                        textStyle: const TextStyle(
+                            fontSize: 16, fontWeight: FontWeight.w600),
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(12))),
+                    child: const Text(
+                      "Sign in",
+                      style: TextStyle(color: Colors.white),
+                    ),
+                  )),
                   const SizedBox(
                     height: 10,
                   ),
                   SizedBox(
-                      width: double.infinity,
+                      // width: double.infinity,
                       child: OutlinedButton(
                         onPressed: () {
                           Navigator.push(

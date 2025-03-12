@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:hyolmo/constants/constant.dart';
 import 'package:hyolmo/pages/articles.dart';
 import 'package:hyolmo/pages/options.dart';
-import 'package:hyolmo/widgets/events.dart';
+
 
 class MenuPage extends StatelessWidget {
   const MenuPage({super.key});
