@@ -2,9 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:hyolmo/constants/constant.dart';
 import 'package:hyolmo/pages/home.dart';
 import 'package:hyolmo/pages/login_page.dart';
+import 'package:hyolmo/pages/members.dart';
 import 'package:hyolmo/pages/options.dart';
 import 'package:hyolmo/pages/menu.dart';
-import 'package:hyolmo/pages/settings_page.dart';
+// import 'package:hyolmo/pages/extra_settingspage.dart';
 
 class BottomNavBar extends StatefulWidget {
   const BottomNavBar({super.key});
@@ -16,9 +17,11 @@ class BottomNavBar extends StatefulWidget {
 class _BottomNavBarState extends State<BottomNavBar> {
   final appScreens = [
     const HomeScreen(),
+    // const OptionsPage(),
+  // const SettingsPage(),
+  const LoginPage(),
     const MenuPage(),
-    const LoginPage(),
-    const SettingsPage(),
+    // 
   ];
 
   int _selectedIndex = 0;
@@ -31,14 +34,14 @@ class _BottomNavBarState extends State<BottomNavBar> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: AppStyles.primaryColor,
-        title: const Text(
-          'Hyolmo Social Service Center',
-          style: TextStyle(color: Colors.white),
-        ),
-        centerTitle: true,
-      ),
+      // appBar: AppBar(
+      //   backgroundColor: AppStyles.primaryColor,
+      //   title: const Text(
+      //     'Hyolmo Social Service Center',
+      //     style: TextStyle(color: Colors.white),
+      //   ),
+      //   centerTitle: true,
+      // ),
       body: appScreens[_selectedIndex],
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _selectedIndex,
@@ -63,9 +66,9 @@ class _BottomNavBarState extends State<BottomNavBar> {
               label: 'Account'),
           BottomNavigationBarItem(
               icon: Icon(
-                Icons.settings,
+                Icons.menu
               ),
-              label: 'Settings'),
+              label: 'Menu'),
         ],
       ),
     );

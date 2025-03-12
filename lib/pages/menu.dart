@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:hyolmo/constants/constant.dart';
 import 'package:hyolmo/pages/articles.dart';
 import 'package:hyolmo/pages/options.dart';
+import 'package:hyolmo/widgets/custom_appbar.dart';
 import 'package:hyolmo/widgets/events.dart';
+import 'package:hyolmo/widgets/side_drawer.dart';
 
 class MenuPage extends StatelessWidget {
   const MenuPage({super.key});
@@ -10,6 +12,8 @@ class MenuPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: const CustomAppBar(title: ""),
+      endDrawer: const SideDrawer(),
       backgroundColor: AppStyles.backgroundColor,
       body: 
       SingleChildScrollView(
