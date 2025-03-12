@@ -11,7 +11,7 @@ class SettingsDemo extends StatelessWidget {
         title: const Text('Settings Page'),
 
       ),
-      body: Center(
+      body: const Center(
         child: FlutterLogo(
           size: 100,
         ),

@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:hyolmo/constants/constant.dart';
 import 'package:hyolmo/pages/home.dart';
 import 'package:hyolmo/pages/login_page.dart';
-import 'package:hyolmo/pages/members.dart';
-import 'package:hyolmo/pages/options.dart';
 import 'package:hyolmo/pages/menu.dart';
 // import 'package:hyolmo/pages/extra_settingspage.dart';
 

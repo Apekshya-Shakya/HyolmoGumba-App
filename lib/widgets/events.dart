@@ -46,7 +46,6 @@
 
 import 'package:flutter/material.dart';
 import 'package:hyolmo/constants/constant.dart';
-import 'package:hyolmo/core/resources/media.dart';
 
 class Events extends StatelessWidget {
   const Events({super.key});
@@ -57,7 +56,7 @@ class Events extends StatelessWidget {
     return Container(
         width: size.width * 0.5,
         // height: 250,
-        margin: EdgeInsets.only(right: 16),
+        margin: const EdgeInsets.only(right: 16),
         decoration: BoxDecoration(
             color: Colors.white, borderRadius: BorderRadius.circular(10)),
         child: Column(
@@ -69,7 +68,7 @@ class Events extends StatelessWidget {
                  
                 ),
                 
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
             Padding(
@@ -79,7 +78,7 @@ class Events extends StatelessWidget {
                 style: AppStyles.text,
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 3,
             ),
             Padding(
@@ -89,7 +88,7 @@ class Events extends StatelessWidget {
                 style: AppStyles.subtext,
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
           ],

@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hyolmo/constants/constant.dart';
-import 'package:hyolmo/pages/articles.dart';
 import 'package:hyolmo/pages/members.dart';
 import 'package:hyolmo/pages/signup.dart';
-import 'package:hyolmo/widgets/events.dart';
-import 'package:hyolmo/widgets/loginButton.dart';
 
 class OptionsPage extends StatelessWidget {
   const OptionsPage({super.key});
@@ -43,7 +40,7 @@ class OptionsPage extends StatelessWidget {
                 ),
                 // SizedBox(height: 20,),
                 // Image.asset("assets/images/gumba.jpeg"),
-                Spacer(),
+                const Spacer(),
                 
         
                SizedBox(

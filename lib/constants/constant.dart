@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 class AppStyles{
   static Color primaryColor =  const Color.fromARGB(255, 71, 12, 22); //no idea why this color is not changing
   static Color bottomBtnColor = const Color.fromARGB(226, 121, 24, 24);
-  static Color backgroundColor =const Color.fromARGB(238, 253, 251, 251);
+  static Color backgroundColor =const Color.fromARGB(218, 243, 241, 241);
   static Color textBlack= const Color.fromARGB(255, 2, 0, 0);
   static Color textGrey = const Color.fromARGB(255, 109, 113, 117);
   static Color mainWhite= Colors.white;

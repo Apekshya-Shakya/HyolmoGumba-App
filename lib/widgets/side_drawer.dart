@@ -28,7 +28,7 @@ class SideDrawer extends StatelessWidget {
                 leading: const Icon(Icons.settings),
                 title: const Text("Account Settings"),
                 onTap: (){
-                  Navigator.of(context).push(MaterialPageRoute(builder: (context) => SettingsDemo()));
+                  Navigator.of(context).push(MaterialPageRoute(builder: (context) => const SettingsDemo()));
                 },
                 
               ),

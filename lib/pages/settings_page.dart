@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hyolmo/constants/constant.dart';
 import 'package:hyolmo/pages/articles.dart';
-import 'package:hyolmo/pages/options.dart';
-import 'package:hyolmo/widgets/events.dart';
-import 'package:hyolmo/widgets/searchbar.dart';
 
 class SettingsPage extends StatelessWidget {
   const SettingsPage({super.key});

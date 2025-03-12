@@ -85,8 +85,8 @@ class MembersPage extends StatelessWidget {
         child: Column(
           children: [
             // Search bar
-            Padding(
-              padding: const EdgeInsets.all(8.0),
+            const Padding(
+              padding: EdgeInsets.all(8.0),
                child:  TextField(
                   decoration: InputDecoration(
                     hintText: 'Search',
@@ -159,7 +159,7 @@ class MemberDetailPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(member['name']!, style: TextStyle(color: Colors.white),),
+        title: Text(member['name']!, style: const TextStyle(color: Colors.white),),
         backgroundColor: AppStyles.primaryColor,
           iconTheme: const IconThemeData(color: Colors.white),
       ),
