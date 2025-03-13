@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hyolmo/constants/constant.dart';
+import 'package:hyolmo/pages/login_page.dart';
 import 'package:hyolmo/pages/settings.dart';
 
 class SideDrawer extends StatelessWidget {
@@ -54,12 +55,15 @@ class SideDrawer extends StatelessWidget {
                 
               ),
               const Divider(),
-              const Expanded(child: Align(
+              Expanded(child: Align(
                 alignment: Alignment.bottomCenter,
                 
                 child: ListTile(
-                  leading: Icon(Icons.logout),
-                  title: Text("Logout"),
+                  leading: const Icon(Icons.logout),
+                  title: const Text("Logout"),
+                  onTap: (){
+                  Navigator.of(context).push(MaterialPageRoute(builder: (context) => const LoginPage()));
+                },
                  
                 ),
               ))

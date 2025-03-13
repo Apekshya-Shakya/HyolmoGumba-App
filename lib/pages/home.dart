@@ -19,37 +19,11 @@ class HomeScreen extends StatelessWidget {
       body: SingleChildScrollView(
         scrollDirection: Axis.vertical,
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 0),
+          padding: const EdgeInsets.only(left: 16, right: 16, top: 16),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              // // searchbar
-              // const TextField(
-              //   decoration: InputDecoration(
-              //     hintText: 'Search',
-              //     hintStyle: TextStyle(color: Colors.grey),
-              //     suffixIcon: Icon(Icons.search),
-              //     filled: true,
-              //     fillColor: Colors.white,
-              //     border: OutlineInputBorder(
-              //       borderRadius: BorderRadius.all(Radius.circular(5)),
-              //       borderSide: BorderSide.none,
-              //     ),
-              //   ),
-              // ),
-              // const SizedBox(height: 10),
-              // const Text(
-              //   "Search for events, information, and members",
-              //   style: TextStyle(color: Colors.grey),
-              // ),
-
-              // const SizedBox(height: 30),
-              // Viewtitle(
-              //   bigText: "Gallery",
-              //   smallText: "View all",
-              //   func: () {},
-              // ),
-
+             
               //Gallery section
 
               Image.asset(
@@ -140,7 +114,7 @@ class HomeScreen extends StatelessWidget {
                   children: [
                     // First Box
                     Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 16),
+                      padding: const EdgeInsets.symmetric(horizontal: 0),
                       child: BoxContainer(
                         
                         imagePath: 'assets/images/logo.png',
@@ -153,7 +127,7 @@ class HomeScreen extends StatelessWidget {
 
                     // Second Box
                     Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 16),
+                      padding: const EdgeInsets.symmetric(horizontal: 0),
                       child: BoxContainer(
                         imagePath: 'assets/images/logo.png', // Change if needed
                         title: 'OBJECTIVES',
@@ -165,7 +139,7 @@ class HomeScreen extends StatelessWidget {
 
                     // Third Box
                     Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 16),
+                      padding: const EdgeInsets.symmetric(horizontal: 0),
                       child: BoxContainer(
                         imagePath: 'assets/images/logo.png', // Change if needed
                         title: 'PROGRAMMES',
@@ -198,9 +172,9 @@ class HomeScreen extends StatelessWidget {
               // events section
               Container(
                 child: Padding(
-                  padding: const EdgeInsets.all(16.0),
+                  padding: const EdgeInsets.symmetric(vertical: 20),
                   child: Column(
-                    // Wrap all children in a Column
+                    
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Viewtitle(
@@ -208,10 +182,10 @@ class HomeScreen extends StatelessWidget {
                         smallText: "View all",
                         func: () {},
                       ),
-                      SizedBox(
+                      const SizedBox(
                           height:
-                              10), // No need for 'const' here if dynamically updating
-                      SingleChildScrollView(
+                              10), 
+                      const SingleChildScrollView(
                         scrollDirection: Axis.horizontal,
                         child: Row(
                           children: [
@@ -242,7 +216,7 @@ class BoxContainer extends StatelessWidget {
   final String title;
   final String description;
 
-  BoxContainer(
+  const BoxContainer(
       {required this.imagePath,
       required this.title,
       required this.description});
@@ -250,10 +224,11 @@ class BoxContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.all(8), 
+      
+      padding: const EdgeInsets.all(8), 
       width: double.infinity,
       height: 150,
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
         color: Colors.white,
       ),
       child: Column(
@@ -262,6 +237,7 @@ class BoxContainer extends StatelessWidget {
           Image.asset(
             imagePath,
             height: 60,
+            
           ),
           SizedBox(height: 10),
           Text(

@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:hyolmo/constants/constant.dart';
 import 'package:hyolmo/pages/members.dart';
 import 'package:hyolmo/pages/signup.dart';
+import 'package:hyolmo/widgets/custom_appbar.dart';
+import 'package:hyolmo/widgets/side_drawer.dart';
 
 class OptionsPage extends StatelessWidget {
   const OptionsPage({super.key});
@@ -9,11 +11,12 @@ class OptionsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: AppStyles.primaryColor,
-        title: const Text('Membership Options', style: TextStyle(color: Colors.white),),
-        iconTheme: const IconThemeData(color: Colors.white),
-      ),
+      appBar: const CustomAppBar(title: "",),
+      endDrawer: const SideDrawer(),
+      
+      
+      
+
     
       backgroundColor: AppStyles.mainWhite,
       

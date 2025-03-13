@@ -1,51 +1,8 @@
-// import 'package:flutter/material.dart';
-// import 'package:hyolmo/constants/constant.dart';
-
-// class Events extends StatelessWidget {
-//   const Events({super.key});
-
-//   @override
-//   Widget build(BuildContext context) {
-//     // final size = MediaQuery.of(context).size;
-//     return Padding(
-//       padding: const EdgeInsets.all(8.0),
-//       child: SizedBox(
-//         width: 180,
-//         child: Column(
-//           crossAxisAlignment: CrossAxisAlignment.start,
-//           children: [
-//             Image.asset(
-//               'assets/images/gumba.jpeg',
-//               // height: 150,
-//               // width: 150,
-//             ),
-//             const SizedBox(
-//               height: 10,
-//             ),
-//             const Text(
-//               "Title",
-//               style: TextStyle(
-//                   fontSize: 18,
-//                   color: Colors.black,
-//                   fontWeight: FontWeight.w600),
-//             ),
-//             const SizedBox(
-//               height: 3,
-//             ),
-//             Text(
-//               "Desc.",
-//               style: AppStyles.subtext,
-//             ),
-//           ],
-//         ),
-//       ),
-//     );
-//   }
-// }
 
 
 import 'package:flutter/material.dart';
 import 'package:hyolmo/constants/constant.dart';
+import 'package:hyolmo/pages/Flow_Pages/events_page.dart';
 
 class Events extends StatelessWidget {
   const Events({super.key});
@@ -53,9 +10,21 @@ class Events extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
-    return Container(
+
+    return InkWell(
+    onTap: () {
+      // Navigate to another page
+      Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (context) => EventsDesPage(), // Replace with your destination page
+        ),
+      );
+    }, 
+    child: Container(
         width: size.width * 0.5,
         // height: 250,
+        
         margin: const EdgeInsets.only(right: 16),
         decoration: BoxDecoration(
             color: Colors.white, borderRadius: BorderRadius.circular(10)),
@@ -92,6 +61,6 @@ class Events extends StatelessWidget {
               height: 10,
             ),
           ],
-        ));
+        )),);
   }
 }

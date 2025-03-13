@@ -3,6 +3,7 @@ import 'package:hyolmo/constants/constant.dart';
 import 'package:hyolmo/pages/home.dart';
 import 'package:hyolmo/pages/login_page.dart';
 import 'package:hyolmo/pages/menu.dart';
+import 'package:hyolmo/pages/options.dart';
 // import 'package:hyolmo/pages/extra_settingspage.dart';
 
 class BottomNavBar extends StatefulWidget {
@@ -15,9 +16,9 @@ class BottomNavBar extends StatefulWidget {
 class _BottomNavBarState extends State<BottomNavBar> {
   final appScreens = [
     const HomeScreen(),
-    // const OptionsPage(),
+    const OptionsPage(),
   // const SettingsPage(),
-  const LoginPage(),
+ // const LoginPage(),
     const MenuPage(),
     // 
   ];
