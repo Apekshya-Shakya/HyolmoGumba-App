@@ -2,9 +2,22 @@ import 'package:flutter/material.dart';
 import 'package:hyolmo/constants/constant.dart';
 import 'package:hyolmo/pages/login_page.dart';
 import 'package:hyolmo/pages/settings.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class SideDrawer extends StatelessWidget {
   const SideDrawer({super.key});
+
+
+// Function to launch URLs
+  void _launchURL(String url) async {
+    final Uri uri = Uri.parse(url);
+    if (await canLaunchUrl(uri)) {
+      await launchUrl(uri, mode: LaunchMode.externalApplication);
+    } else {
+      throw 'Could not launch $url';
+    }
+  }
+
 
   @override
   Widget build(BuildContext context) {
@@ -26,38 +39,46 @@ class SideDrawer extends StatelessWidget {
               ),
               
               ListTile(
-                leading: const Icon(Icons.settings),
-                title: const Text("Account Settings"),
+                leading: const Icon(Icons.person),
+                title: const Text("View Profile"),
                 onTap: (){
                   Navigator.of(context).push(MaterialPageRoute(builder: (context) => const SettingsDemo()));
                 },
                 
               ),
-              const ListTile(
-                leading: Icon(Icons.dark_mode),
-                title: Text(" Dark Theme"),
+              ListTile(
+                leading: const Icon(Icons.settings),
+                title: const Text("Account Settings"),
+                 onTap: (){
+                  Navigator.of(context).push(MaterialPageRoute(builder: (context) => const SettingsDemo()));
+                },
                 
               ),
-              const ListTile(
-                leading: Icon(Icons.notification_add),
-                title: Text("Notification Settings"),
+              ListTile(
+                leading: const Icon(Icons.question_answer),
+                title: const Text("FAQ"),
+                 onTap: (){
+                  Navigator.of(context).push(MaterialPageRoute(builder: (context) => const SettingsDemo()));
+                },
                 //selected: true,
                 
               ),
-              const ListTile(
-                leading: Icon(Icons.settings),
-                title: Text("Account Settings"),
+              ListTile(
+                leading: const Icon(Icons.support_agent_outlined),
+                title: const Text("Support"),
+                 onTap: (){
+                  Navigator.of(context).push(MaterialPageRoute(builder: (context) => const SettingsDemo()));
+                },
                 
               ),
-              const ListTile(
-                leading: Icon(Icons.dark_mode),
-                title: Text(" Dark Theme"),
-                
-              ),
+             
               const Divider(),
+              
+          
               Expanded(child: Align(
                 alignment: Alignment.bottomCenter,
                 
+              
                 child: ListTile(
                   leading: const Icon(Icons.logout),
                   title: const Text("Logout"),

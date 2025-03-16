@@ -57,12 +57,12 @@ class HomeScreen extends StatelessWidget {
               Container(
   padding: EdgeInsets.symmetric(horizontal: 16, vertical: 20),
   decoration: BoxDecoration(
-    color: Color.fromARGB(255, 2, 21, 41), // Background color
+    color: Color.fromARGB(185, 8, 84, 166), // Background color
     image: DecorationImage(
       image: AssetImage("assets/images/gumba.jpeg"), // Background image
       fit: BoxFit.cover,
       colorFilter: ColorFilter.mode(
-        Color.fromARGB(250, 1, 61, 114).withOpacity(1), // Dark overlay
+        Color.fromARGB(158, 44, 128, 201).withOpacity(1), // Dark overlay
         BlendMode.darken,
       ),
     ),
@@ -117,7 +117,7 @@ class HomeScreen extends StatelessWidget {
                       padding: const EdgeInsets.symmetric(horizontal: 0),
                       child: BoxContainer(
                         
-                        imagePath: 'assets/images/logo.png',
+                        imagePath: 'assets/images/objectives.jpg',
                         title: 'CENTER',
                         description:
                             'Hyolmo Social Service Center came into being to address the social and cultural needs of the Hyolmo community.',
@@ -129,7 +129,7 @@ class HomeScreen extends StatelessWidget {
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 0),
                       child: BoxContainer(
-                        imagePath: 'assets/images/logo.png', // Change if needed
+                        imagePath: 'assets/images/programmes.jpg', 
                         title: 'OBJECTIVES',
                         description:
                             'Help preserve the Himalayan Buddhist rituals and practices amongst Hyolmo community.',
@@ -141,7 +141,7 @@ class HomeScreen extends StatelessWidget {
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 0),
                       child: BoxContainer(
-                        imagePath: 'assets/images/logo.png', // Change if needed
+                        imagePath: 'assets/images/logo.png', 
                         title: 'PROGRAMMES',
                         description:
                             'Since its inception in 2050 BS Hyolmo Social Service center has been continually organization various activities.',
