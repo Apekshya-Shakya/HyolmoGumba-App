@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hyolmo/constants/constant.dart';
+import 'package:hyolmo/pages/articles.dart';
 import 'package:hyolmo/widgets/custom_appbar.dart';
 import 'package:hyolmo/widgets/events.dart';
 import 'package:hyolmo/widgets/info_widget.dart';
