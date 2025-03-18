@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:hyolmo/constants/constant.dart';
-import 'package:hyolmo/pages/articles.dart';
 import 'package:hyolmo/widgets/custom_appbar.dart';
 import 'package:hyolmo/widgets/events.dart';
 import 'package:hyolmo/widgets/info_widget.dart';
@@ -62,7 +61,7 @@ class HomeScreen extends StatelessWidget {
       image: AssetImage("assets/images/gumba.jpeg"), // Background image
       fit: BoxFit.cover,
       colorFilter: ColorFilter.mode(
-        Color.fromARGB(158, 44, 128, 201).withOpacity(1), // Dark overlay
+        Color.fromARGB(158, 54, 127, 190).withOpacity(1), // Dark overlay
         BlendMode.darken,
       ),
     ),

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:hyolmo/widgets/custom_appbar.dart';
 
 class EventsDesPage extends StatelessWidget {
   const EventsDesPage({super.key});
