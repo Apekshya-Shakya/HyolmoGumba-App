@@ -17,7 +17,7 @@ class Events extends StatelessWidget {
       Navigator.push(
         context,
         MaterialPageRoute(
-          builder: (context) => EventsDesPage(), // Replace with your destination page
+          builder: (context) => const EventsDesPage(), // Replace with your destination page
         ),
       );
     }, 

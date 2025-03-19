@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hyolmo/constants/constant.dart';
-import 'package:hyolmo/pages/articles.dart';
 import 'package:hyolmo/widgets/custom_appbar.dart';
 import 'package:hyolmo/widgets/events.dart';
-import 'package:hyolmo/widgets/info_widget.dart';
 import 'package:hyolmo/widgets/side_drawer.dart';
 import 'package:hyolmo/widgets/title_view.dart';
 
@@ -55,19 +53,19 @@ class HomeScreen extends StatelessWidget {
               // ),
 
               Container(
-  padding: EdgeInsets.symmetric(horizontal: 16, vertical: 20),
+  padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 20),
   decoration: BoxDecoration(
-    color: Color.fromARGB(255, 2, 21, 41), // Background color
+    color: const Color.fromARGB(255, 2, 21, 41), // Background color
     image: DecorationImage(
-      image: AssetImage("assets/images/gumba.jpeg"), // Background image
+      image: const AssetImage("assets/images/gumba.jpeg"), // Background image
       fit: BoxFit.cover,
       colorFilter: ColorFilter.mode(
-        Color.fromARGB(250, 1, 61, 114).withOpacity(1), // Dark overlay
+        const Color.fromARGB(250, 1, 61, 114).withOpacity(1), // Dark overlay
         BlendMode.darken,
       ),
     ),
   ),
-  child: Column(
+  child: const Column(
     mainAxisSize: MainAxisSize.min,
     crossAxisAlignment: CrossAxisAlignment.center,
     children: [
@@ -110,11 +108,11 @@ class HomeScreen extends StatelessWidget {
               //main container(for three box)
 
               Container(
-                child: Column(
+                child: const Column(
                   children: [
                     // First Box
                     Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 0),
+                      padding: EdgeInsets.symmetric(horizontal: 0),
                       child: BoxContainer(
                         
                         imagePath: 'assets/images/logo.png',
@@ -123,11 +121,11 @@ class HomeScreen extends StatelessWidget {
                             'Hyolmo Social Service Center came into being to address the social and cultural needs of the Hyolmo community.',
                       ),
                     ),
-                    const SizedBox(height: 15),
+                    SizedBox(height: 15),
 
                     // Second Box
                     Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 0),
+                      padding: EdgeInsets.symmetric(horizontal: 0),
                       child: BoxContainer(
                         imagePath: 'assets/images/logo.png', // Change if needed
                         title: 'OBJECTIVES',
@@ -135,11 +133,11 @@ class HomeScreen extends StatelessWidget {
                             'Help preserve the Himalayan Buddhist rituals and practices amongst Hyolmo community.',
                       ),
                     ),
-                    const SizedBox(height: 15),
+                    SizedBox(height: 15),
 
                     // Third Box
                     Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 0),
+                      padding: EdgeInsets.symmetric(horizontal: 0),
                       child: BoxContainer(
                         imagePath: 'assets/images/logo.png', // Change if needed
                         title: 'PROGRAMMES',
@@ -217,7 +215,7 @@ class BoxContainer extends StatelessWidget {
   final String description;
 
   const BoxContainer(
-      {required this.imagePath,
+      {super.key, required this.imagePath,
       required this.title,
       required this.description});
 
@@ -239,18 +237,18 @@ class BoxContainer extends StatelessWidget {
             height: 60,
             
           ),
-          SizedBox(height: 10),
+          const SizedBox(height: 10),
           Text(
             title,
-            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 13),
+            style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 13),
           ),
-          SizedBox(height: 5),
+          const SizedBox(height: 5),
           Padding(
-            padding: EdgeInsets.symmetric(horizontal: 10),
+            padding: const EdgeInsets.symmetric(horizontal: 10),
             child: Text(
               description,
               textAlign: TextAlign.center,
-              style: TextStyle(fontSize: 10, color: Colors.black87),
+              style: const TextStyle(fontSize: 10, color: Colors.black87),
             ),
           ),
         ],

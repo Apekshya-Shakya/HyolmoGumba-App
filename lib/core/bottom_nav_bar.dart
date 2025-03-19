@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hyolmo/constants/constant.dart';
 import 'package:hyolmo/pages/home.dart';
-import 'package:hyolmo/pages/login_page.dart';
 import 'package:hyolmo/pages/menu.dart';
 import 'package:hyolmo/pages/options.dart';
 // import 'package:hyolmo/pages/extra_settingspage.dart';
@@ -17,10 +16,10 @@ class _BottomNavBarState extends State<BottomNavBar> {
   final appScreens = [
     const HomeScreen(),
     const OptionsPage(),
-  // const SettingsPage(),
- // const LoginPage(),
+    // const SettingsPage(),
+    // const LoginPage(),
     const MenuPage(),
-    // 
+    //
   ];
 
   int _selectedIndex = 0;
@@ -63,11 +62,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
                 Icons.account_circle_sharp,
               ),
               label: 'Account'),
-          BottomNavigationBarItem(
-              icon: Icon(
-                Icons.menu
-              ),
-              label: 'Menu'),
+          BottomNavigationBarItem(icon: Icon(Icons.menu), label: 'Menu'),
         ],
       ),
     );
