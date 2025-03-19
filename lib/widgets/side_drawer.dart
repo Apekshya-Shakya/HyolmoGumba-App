@@ -2,21 +2,21 @@ import 'package:flutter/material.dart';
 import 'package:hyolmo/constants/constant.dart';
 import 'package:hyolmo/pages/login_page.dart';
 import 'package:hyolmo/pages/settings.dart';
-import 'package:url_launcher/url_launcher.dart';
+// import 'package:url_launcher/url_launcher.dart';
 
 class SideDrawer extends StatelessWidget {
   const SideDrawer({super.key});
 
 
-// Function to launch URLs
-  void _launchURL(String url) async {
-    final Uri uri = Uri.parse(url);
-    if (await canLaunchUrl(uri)) {
-      await launchUrl(uri, mode: LaunchMode.externalApplication);
-    } else {
-      throw 'Could not launch $url';
-    }
-  }
+// // Function to launch URLs
+//   void _launchURL(String url) async {
+//     final Uri uri = Uri.parse(url);
+//     if (await canLaunchUrl(uri)) {
+//       await launchUrl(uri, mode: LaunchMode.externalApplication);
+//     } else {
+//       throw 'Could not launch $url';
+//     }
+//   }
 
 
   @override
