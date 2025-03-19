@@ -16,10 +16,10 @@ class _BottomNavBarState extends State<BottomNavBar> {
   final appScreens = [
     const HomeScreen(),
     const OptionsPage(),
-  // const SettingsPage(),
- // const LoginPage(),
+    // const SettingsPage(),
+    // const LoginPage(),
     const MenuPage(),
-    // 
+    //
   ];
 
   int _selectedIndex = 0;
@@ -62,11 +62,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
                 Icons.account_circle_sharp,
               ),
               label: 'Account'),
-          BottomNavigationBarItem(
-              icon: Icon(
-                Icons.menu
-              ),
-              label: 'Menu'),
+          BottomNavigationBarItem(icon: Icon(Icons.menu), label: 'Menu'),
         ],
       ),
     );
