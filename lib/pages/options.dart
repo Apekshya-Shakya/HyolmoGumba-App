@@ -16,7 +16,7 @@ class OptionsPage extends StatelessWidget {
       body: SafeArea(
         child: Column(
           children: [
-            const SizedBox(height: 20), 
+            const SizedBox(height: 20),
             const Text(
               "Membership",
               style: TextStyle(fontWeight: FontWeight.bold, fontSize: 24),

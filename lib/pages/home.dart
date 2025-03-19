@@ -115,7 +115,7 @@ class HomeScreen extends StatelessWidget {
                       padding: EdgeInsets.symmetric(horizontal: 0),
                       child: BoxContainer(
                         
-                        imagePath: 'assets/images/logo.png',
+                        imagePath: 'assets/images/objectives.jpg',
                         title: 'CENTER',
                         description:
                             'Hyolmo Social Service Center came into being to address the social and cultural needs of the Hyolmo community.',
@@ -127,7 +127,7 @@ class HomeScreen extends StatelessWidget {
                     Padding(
                       padding: EdgeInsets.symmetric(horizontal: 0),
                       child: BoxContainer(
-                        imagePath: 'assets/images/logo.png', // Change if needed
+                        imagePath: 'assets/images/programmes.jpg', 
                         title: 'OBJECTIVES',
                         description:
                             'Help preserve the Himalayan Buddhist rituals and practices amongst Hyolmo community.',
@@ -139,7 +139,7 @@ class HomeScreen extends StatelessWidget {
                     Padding(
                       padding: EdgeInsets.symmetric(horizontal: 0),
                       child: BoxContainer(
-                        imagePath: 'assets/images/logo.png', // Change if needed
+                        imagePath: 'assets/images/logo.png', 
                         title: 'PROGRAMMES',
                         description:
                             'Since its inception in 2050 BS Hyolmo Social Service center has been continually organization various activities.',
