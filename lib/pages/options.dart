@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hyolmo/constants/constant.dart';
 import 'package:hyolmo/pages/members.dart';
 import 'package:hyolmo/pages/signup.dart';
 import 'package:hyolmo/widgets/custom_appbar.dart';
@@ -12,7 +13,7 @@ class OptionsPage extends StatelessWidget {
     return Scaffold(
       appBar: const CustomAppBar(title: ""),
       endDrawer: const SideDrawer(),
-      backgroundColor: Colors.white,
+      backgroundColor: AppStyles.backgroundColor,
       body: SafeArea(
         child: Column(
           children: [
@@ -63,7 +64,7 @@ class OptionsPage extends StatelessWidget {
                         Expanded(
                           child: _buildMenuItem(
                             'Life Members',
-                            Icons.directions_bike, //Need to change the icon
+                            Icons.directions_bike, // Update icon if needed
                             context,
                             const MembersPage(),
                           ),
@@ -122,8 +123,12 @@ class OptionsPage extends StatelessWidget {
   }
 
   Widget _buildMenuItem(
-      String title, IconData icon, BuildContext context, Widget page,
-      {bool isLarge = false}) {
+    String title,
+    IconData icon,
+    BuildContext context,
+    Widget page, {
+    bool isLarge = false,
+  }) {
     return GestureDetector(
       onTap: () {
         Navigator.push(
@@ -133,21 +138,29 @@ class OptionsPage extends StatelessWidget {
       },
       child: Container(
         width: double.infinity,
-        height: isLarge ? 120 : 100, // Increased height for better spacing
+        height: isLarge ? 120 : 100,
         decoration: BoxDecoration(
-          color: const Color(0xFF1E4A76),
+          color: Colors.white,
           borderRadius: BorderRadius.circular(10),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.grey.withOpacity(0.3),
+              spreadRadius: 2,
+              blurRadius: 6,
+              offset: const Offset(0, 3), // Shadow position
+            ),
+          ],
         ),
         padding: const EdgeInsets.all(16),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Icon(icon, color: Colors.white, size: 30),
-            const SizedBox(height: 8), // Adds space between icon and text
+            Icon(icon, color: Colors.black, size: 30),
+            const SizedBox(height: 8),
             Text(
               title,
               textAlign: TextAlign.center,
-              style: const TextStyle(color: Colors.white, fontSize: 14),
+              style: const TextStyle(color: Colors.black, fontSize: 14),
               overflow: TextOverflow.ellipsis,
             ),
           ],
