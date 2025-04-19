@@ -1,12 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:hyolmo/constants/constant.dart';
 import 'package:hyolmo/pages/Flow_Pages/account_settings_page.dart';
+import 'package:hyolmo/pages/Flow_Pages/faq_page.dart';
+import 'package:hyolmo/pages/Flow_Pages/support_page.dart';
 import 'package:hyolmo/pages/login_page.dart';
 import 'package:hyolmo/pages/settings.dart';
+
+import '../pages/members.dart';
 // import 'package:url_launcher/url_launcher.dart';
 
 class SideDrawer extends StatelessWidget {
   const SideDrawer({super.key});
+  
+  get member => null;
 
 
 // // Function to launch URLs
@@ -42,9 +48,15 @@ class SideDrawer extends StatelessWidget {
               ListTile(
                 leading: const Icon(Icons.person),
                 title: const Text("View Profile"),
-                onTap: (){
-                  Navigator.of(context).push(MaterialPageRoute(builder: (context) => const SettingsDemo()));
-                },
+                 onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) =>
+                                MemberDetailPage(member: member),
+                          ),
+                        );
+                      },
                 
               ),
               ListTile(
@@ -59,7 +71,7 @@ class SideDrawer extends StatelessWidget {
                 leading: const Icon(Icons.question_answer),
                 title: const Text("FAQ"),
                  onTap: (){
-                  Navigator.of(context).push(MaterialPageRoute(builder: (context) => const SettingsDemo()));
+                  Navigator.of(context).push(MaterialPageRoute(builder: (context) => const FAQPage()));
                 },
                 //selected: true,
                 
@@ -68,7 +80,7 @@ class SideDrawer extends StatelessWidget {
                 leading: const Icon(Icons.support_agent_outlined),
                 title: const Text("Support"),
                  onTap: (){
-                  Navigator.of(context).push(MaterialPageRoute(builder: (context) => const SettingsDemo()));
+                  Navigator.of(context).push(MaterialPageRoute(builder: (context) => const SupportPage()));
                 },
                 
               ),

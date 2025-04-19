@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:hyolmo/constants/constant.dart';
 
 class AccountSettingsPage extends StatefulWidget {
   const AccountSettingsPage({super.key});
 
   @override
   State<AccountSettingsPage> createState() => _AccountSettingsPageState();
+  
 }
 
 class _AccountSettingsPageState extends State<AccountSettingsPage> {
@@ -13,8 +15,35 @@ class _AccountSettingsPageState extends State<AccountSettingsPage> {
   String _password = "********";
   String _phone = "+977-98XXXXXXXX";
 
-  void _openEditDeleteDialog(String field, String value, Function(String) onEdit, Function() onDelete) {
-    final TextEditingController controller = TextEditingController(text: value);
+  void _confirmDelete(String field, VoidCallback onConfirmed) {
+    showDialog(
+      context: context,
+      builder: (ctx) => AlertDialog(
+        title: Text("Delete $field"),
+        content: Text("Are you sure you want to delete your $field?"),
+        actions: [
+          TextButton(
+            child: const Text("Cancel"),
+            onPressed: () => Navigator.pop(ctx),
+          ),
+          ElevatedButton(
+            // style: ElevatedButton.styleFrom(),
+            child: const Text("Delete"),
+            onPressed: () {
+              Navigator.pop(ctx);
+              onConfirmed();
+              ScaffoldMessenger.of(context).showSnackBar(
+                SnackBar(content: Text("$field deleted")),
+              );
+            },
+          ),
+        ],
+      ),
+    );
+  }
+
+  void _editOrDeleteField(String field, String currentValue, Function(String) onEdit, VoidCallback onDelete) {
+    final TextEditingController controller = TextEditingController(text: currentValue);
 
     showDialog(
       context: context,
@@ -29,10 +58,7 @@ class _AccountSettingsPageState extends State<AccountSettingsPage> {
           TextButton(
             onPressed: () {
               Navigator.pop(ctx);
-              onDelete();
-              ScaffoldMessenger.of(context).showSnackBar(
-                SnackBar(content: Text("$field deleted")),
-              );
+              _confirmDelete(field, onDelete);
             },
             child: const Text("Delete", style: TextStyle(color: Colors.red)),
           ),
@@ -76,7 +102,7 @@ class _AccountSettingsPageState extends State<AccountSettingsPage> {
   }
 
   void _editUsername() {
-    _openEditDeleteDialog(
+    _editOrDeleteField(
       "Username",
       _username,
       (val) => setState(() => _username = val),
@@ -85,7 +111,7 @@ class _AccountSettingsPageState extends State<AccountSettingsPage> {
   }
 
   void _editEmail() {
-    _openEditDeleteDialog(
+    _editOrDeleteField(
       "Email",
       _email,
       (val) => setState(() => _email = val),
@@ -94,7 +120,7 @@ class _AccountSettingsPageState extends State<AccountSettingsPage> {
   }
 
   void _editPassword() {
-    _openEditDeleteDialog(
+    _editOrDeleteField(
       "Password",
       "",
       (val) => setState(() => _password = "********"),
@@ -103,7 +129,7 @@ class _AccountSettingsPageState extends State<AccountSettingsPage> {
   }
 
   void _editPhone() {
-    _openEditDeleteDialog(
+    _editOrDeleteField(
       "Phone Number",
       _phone,
       (val) => setState(() => _phone = val),
@@ -115,7 +141,9 @@ class _AccountSettingsPageState extends State<AccountSettingsPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Account Settings"),
+        title: const Text("Account Settings", style: TextStyle(color: Colors.white),),
+        iconTheme: const IconThemeData(color: Colors.white),
+        backgroundColor: AppStyles.primaryColor,
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
