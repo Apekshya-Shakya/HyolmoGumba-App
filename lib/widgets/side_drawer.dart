@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hyolmo/constants/constant.dart';
+import 'package:hyolmo/pages/Flow_Pages/account_settings_page.dart';
 import 'package:hyolmo/pages/login_page.dart';
 import 'package:hyolmo/pages/settings.dart';
 // import 'package:url_launcher/url_launcher.dart';
@@ -50,7 +51,7 @@ class SideDrawer extends StatelessWidget {
                 leading: const Icon(Icons.settings),
                 title: const Text("Account Settings"),
                  onTap: (){
-                  Navigator.of(context).push(MaterialPageRoute(builder: (context) => const SettingsDemo()));
+                  Navigator.of(context).push(MaterialPageRoute(builder: (context) => const AccountSettingsPage()));
                 },
                 
               ),
