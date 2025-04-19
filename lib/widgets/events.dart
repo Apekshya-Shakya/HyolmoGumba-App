@@ -12,15 +12,32 @@ class Events extends StatelessWidget {
     final size = MediaQuery.of(context).size;
 
     return InkWell(
+    // onTap: () {
+    //   // Navigate to another page
+    //   Navigator.push(
+    //     context,
+    //     MaterialPageRoute(
+    //       builder: (context) => const EventsDesPage(), // Replace with your destination page
+    //     ),
+    //   );
+    // }, 
     onTap: () {
-      // Navigate to another page
-      Navigator.push(
-        context,
-        MaterialPageRoute(
-          builder: (context) => const EventsDesPage(), // Replace with your destination page
-        ),
-      );
-    }, 
+  Navigator.push(
+    context,
+    MaterialPageRoute(
+      builder: (context) => const EventsDesPage(
+        event: {
+          'image': 'assets/images/gumba.jpeg',
+          'title': 'Annual Puja Celebration',
+          'date': 'April 30, 2025 - 10:00 AM',
+          'description':
+              'Join us for the Annual Puja Ceremony at the monastery. There will be prayer rituals, cultural programs, and a communal feast. All are welcome!',
+        },
+      ),
+    ),
+  );
+}
+,
     child: Container(
         width: size.width * 0.5,
         // height: 250,

@@ -23,7 +23,7 @@ class Viewtitle extends StatelessWidget {
  Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (BuildContext context) => const EventsDesPage(),
+                  builder: (BuildContext context) => const EventsDesPage(event: {},),
                 ));
           },
           child: Text(smallText, style: AppStyles.subheading2),
