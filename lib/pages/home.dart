@@ -21,7 +21,6 @@ class HomeScreen extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-             
               //Gallery section
 
               Image.asset(
@@ -29,80 +28,57 @@ class HomeScreen extends StatelessWidget {
               ),
               const SizedBox(height: 30),
 
-              //Information Banner
-
-              // Container(
-              //   height: 250,
-              //   color: Color.fromARGB(200, 2, 13, 82),
-              //   child: const SingleChildScrollView(
-              //     scrollDirection: Axis.vertical,
-              //     child: Padding(
-              //       padding: EdgeInsets.all(16.0),
-              //       child: Center(
-                      
-              //         child: Text(
-              //             'Hyolmo Social Service Center',
-              //             style: TextStyle(
-              //               fontSize: 14,
-              //               color: Colors.white,
-              //             )),
-                          
-              //       ),
-              //     ),
-              //   ),
-              // ),
-
               Container(
-  padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 20),
-  decoration: BoxDecoration(
-    color: const Color.fromARGB(255, 2, 21, 41), // Background color
-    image: DecorationImage(
-      image: const AssetImage("assets/images/gumba.jpeg"), // Background image
-      fit: BoxFit.cover,
-      colorFilter: ColorFilter.mode(
-        const Color.fromARGB(250, 1, 61, 114).withOpacity(1), // Dark overlay
-        BlendMode.darken,
-      ),
-    ),
-  ),
-  child: const Column(
-    mainAxisSize: MainAxisSize.min,
-    crossAxisAlignment: CrossAxisAlignment.center,
-    children: [
-      Text(
-        'HYOLMO SOCIAL SERVICE CENTER',
-        textAlign: TextAlign.center,
-        style: TextStyle(
-          fontSize: 18,
-          fontWeight: FontWeight.bold,
-          color: Colors.white,
-        ),
-      ),
-      SizedBox(height: 5),
-      Text(
-        'Hyolmo Jabsang Dechhen Hoesal Choheling Monastery',
-        textAlign: TextAlign.center,
-        style: TextStyle(
-          fontSize: 16,
-          
-          color: Colors.white70,
-        ),
-      ),
-      SizedBox(height: 10),
-      Text(
-        "Hyolmo Social Service Center (HSSC) is a non-governmental, non-profit social organization dedicated to the preservation of culture, tradition, and religion of the Hyolmo Indigenous community. It gained legal status as a national-level organization in 1994 AD...",
-        textAlign: TextAlign.center,
-        style: TextStyle(
-          fontSize: 14,
-          color: Colors.white,
-        ),
-      ),
-     
-      
-    ],
-  ),
-),
-
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 16, vertical: 20),
+                decoration: BoxDecoration(
+                  color:
+                      const Color.fromARGB(255, 2, 21, 41), // Background color
+                  image: DecorationImage(
+                    image: const AssetImage(
+                        "assets/images/gumba.jpeg"), // Background image
+                    fit: BoxFit.cover,
+                    colorFilter: ColorFilter.mode(
+                      const Color.fromARGB(250, 1, 61, 114)
+                          .withOpacity(1), // Dark overlay
+                      BlendMode.darken,
+                    ),
+                  ),
+                ),
+                child: const Column(
+                  mainAxisSize: MainAxisSize.min,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Text(
+                      'HYOLMO SOCIAL SERVICE CENTER',
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white,
+                      ),
+                    ),
+                    SizedBox(height: 5),
+                    Text(
+                      'Hyolmo Jabsang Dechhen Hoesal Choheling Monastery',
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        fontSize: 16,
+                        color: Colors.white70,
+                      ),
+                    ),
+                    SizedBox(height: 10),
+                    Text(
+                      "Hyolmo Social Service Center (HSSC) is a non-governmental, non-profit social organization dedicated to the preservation of culture, tradition, and religion of the Hyolmo Indigenous community. It gained legal status as a national-level organization in 1994 AD...",
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        fontSize: 14,
+                        color: Colors.white,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
 
               const SizedBox(height: 30),
               //main container(for three box)
@@ -114,7 +90,6 @@ class HomeScreen extends StatelessWidget {
                     Padding(
                       padding: EdgeInsets.symmetric(horizontal: 0),
                       child: BoxContainer(
-                        
                         imagePath: 'assets/images/objectives.jpg',
                         title: 'CENTER',
                         description:
@@ -127,7 +102,7 @@ class HomeScreen extends StatelessWidget {
                     Padding(
                       padding: EdgeInsets.symmetric(horizontal: 0),
                       child: BoxContainer(
-                        imagePath: 'assets/images/programmes.jpg', 
+                        imagePath: 'assets/images/programmes.jpg',
                         title: 'OBJECTIVES',
                         description:
                             'Help preserve the Himalayan Buddhist rituals and practices amongst Hyolmo community.',
@@ -139,7 +114,7 @@ class HomeScreen extends StatelessWidget {
                     Padding(
                       padding: EdgeInsets.symmetric(horizontal: 0),
                       child: BoxContainer(
-                        imagePath: 'assets/images/logo.png', 
+                        imagePath: 'assets/images/logo.png',
                         title: 'PROGRAMMES',
                         description:
                             'Since its inception in 2050 BS Hyolmo Social Service center has been continually organization various activities.',
@@ -172,7 +147,6 @@ class HomeScreen extends StatelessWidget {
                 child: Padding(
                   padding: const EdgeInsets.symmetric(vertical: 20),
                   child: Column(
-                    
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Viewtitle(
@@ -180,9 +154,7 @@ class HomeScreen extends StatelessWidget {
                         smallText: "View all",
                         func: () {},
                       ),
-                      const SizedBox(
-                          height:
-                              10), 
+                      const SizedBox(height: 10),
                       const SingleChildScrollView(
                         scrollDirection: Axis.horizontal,
                         child: Row(
@@ -215,15 +187,15 @@ class BoxContainer extends StatelessWidget {
   final String description;
 
   const BoxContainer(
-      {super.key, required this.imagePath,
+      {super.key,
+      required this.imagePath,
       required this.title,
       required this.description});
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      
-      padding: const EdgeInsets.all(8), 
+      padding: const EdgeInsets.all(8),
       width: double.infinity,
       height: 150,
       decoration: const BoxDecoration(
@@ -235,7 +207,6 @@ class BoxContainer extends StatelessWidget {
           Image.asset(
             imagePath,
             height: 60,
-            
           ),
           const SizedBox(height: 10),
           Text(

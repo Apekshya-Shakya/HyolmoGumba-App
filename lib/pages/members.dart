@@ -106,7 +106,7 @@ class MembersPage extends StatelessWidget {
               child: ListView.builder(
                 itemCount: members.length,
                 itemBuilder: (context, index) {
-                  final member = members[index];
+                  final  member = members[index];
                   return Card(
                     margin:
                         const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
