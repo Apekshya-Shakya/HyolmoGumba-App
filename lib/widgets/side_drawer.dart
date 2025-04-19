@@ -11,8 +11,6 @@ import '../pages/members.dart';
 
 class SideDrawer extends StatelessWidget {
   const SideDrawer({super.key});
-  
-  get member => null;
 
 
 // // Function to launch URLs
@@ -48,15 +46,22 @@ class SideDrawer extends StatelessWidget {
               ListTile(
                 leading: const Icon(Icons.person),
                 title: const Text("View Profile"),
-                 onTap: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) =>
-                                MemberDetailPage(member: member),
-                          ),
-                        );
-                      },
+                onTap: () {
+  final member = {
+    'photo': 'assets/members/dawa_lama.jpg',
+    'name': 'Apekshya Shakya',
+    'post': 'Member',
+    'village': 'Kathmandu',
+  };
+
+  Navigator.push(
+    context,
+    MaterialPageRoute(
+      builder: (context) => MemberDetailPage(member: member),
+    ),
+  );
+},
+
                 
               ),
               ListTile(
