@@ -13,38 +13,39 @@ class SettingsPage extends StatelessWidget {
         child: Padding(
           padding: const EdgeInsets.all(16.0),
           child: Column(
-          
             children: [
               Column(
-                 crossAxisAlignment: CrossAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   //const SizedBox(height: 20),
                   const TextField(
-                decoration: InputDecoration(
-                  hintText: 'Search',
-                  hintStyle: TextStyle(color: Colors.grey),
-                  suffixIcon: Icon(Icons.search),
-                  filled: true,
-                  fillColor: Colors.white,
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.all(Radius.circular(5)),
-                    borderSide: BorderSide.none,
+                    decoration: InputDecoration(
+                      hintText: 'Search',
+                      hintStyle: TextStyle(color: Colors.grey),
+                      suffixIcon: Icon(Icons.search),
+                      filled: true,
+                      fillColor: Colors.white,
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.all(Radius.circular(5)),
+                        borderSide: BorderSide.none,
+                      ),
+                    ),
                   ),
-                ),
-              ),
-              const SizedBox(height: 10),
-              const Text(
-                "Search for events, information, and members",
-                style: TextStyle(color: Colors.grey),
-              ),
-               const SizedBox(
+                  const SizedBox(height: 10),
+                  const Text(
+                    "Search for events, information, and members",
+                    style: TextStyle(color: Colors.grey),
+                  ),
+                  const SizedBox(
                     height: 20,
                   ),
                   const Text(
                     "Settings",
                     style: TextStyle(fontWeight: FontWeight.bold, fontSize: 24),
                   ),
-                  const SizedBox(height: 20,),
+                  const SizedBox(
+                    height: 20,
+                  ),
                   _buildMenuItem('Account Settings', Icons.info, context,
                       const Articles()),
                   _buildMenuItem('Change Passwords', Icons.language, context,

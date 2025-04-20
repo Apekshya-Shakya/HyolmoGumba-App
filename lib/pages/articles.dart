@@ -6,31 +6,25 @@ class Articles extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  Scaffold(
+    return Scaffold(
       appBar: AppBar(
         backgroundColor: AppStyles.primaryColor,
-        title: const Text("All", style: TextStyle(color: Colors.white),),
-          iconTheme: const IconThemeData(color: Colors.white),),
-        
-      
-
-    
-       backgroundColor: const Color.fromARGB(255, 245, 244, 244),
+        title: const Text(
+          "All",
+          style: TextStyle(color: Colors.white),
+        ),
+        iconTheme: const IconThemeData(color: Colors.white),
+      ),
+      backgroundColor: const Color.fromARGB(255, 245, 244, 244),
       body: ListView(
-       
         children: const [
           SingleChildScrollView(
             child: Column(
-              children: [
-
-              
-
-              ],
+              children: [],
             ),
           )
         ],
-      )
-      ,
+      ),
     );
   }
 }

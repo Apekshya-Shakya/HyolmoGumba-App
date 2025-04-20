@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:hyolmo/constants/constant.dart';
 
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   final String? title;

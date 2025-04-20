@@ -1,9 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:hyolmo/constants/constant.dart';
-import 'package:hyolmo/pages/articles.dart';
-import 'package:hyolmo/pages/options.dart';
+import 'package:hyolmo/pages/Hyolmo.dart';
+import 'package:hyolmo/pages/activities.dart';
+import 'package:hyolmo/pages/contact_us.dart';
+import 'package:hyolmo/pages/news.dart';
 import 'package:hyolmo/widgets/custom_appbar.dart';
 import 'package:hyolmo/widgets/side_drawer.dart';
+import 'package:hyolmo/pages/about_us.dart';
+import 'package:hyolmo/pages/media.dart';
+import 'package:hyolmo/pages/membership_menu.dart';
 
 class MenuPage extends StatelessWidget {
   const MenuPage({super.key});
@@ -45,19 +50,19 @@ class MenuPage extends StatelessWidget {
               Column(
                 children: [
                   _buildMenuItem(
-                      'About Us', Icons.info, context, const Articles()),
+                      'About Us', Icons.info, context, const AboutUsPage()),
                   _buildMenuItem(
-                      'Hyolmo', Icons.language, context, const Articles()),
+                      'Hyolmo', Icons.language, context, const HyolmoPage()),
                   _buildMenuItem('Membership', Icons.person_add, context,
-                      const OptionsPage()),
+                      const MembersMenuPage()),
+                  _buildMenuItem('Activities', Icons.event, context,
+                      const ActivitiesPage()),
                   _buildMenuItem(
-                      'Activities', Icons.event, context, const Articles()),
+                      'News', Icons.article, context, const NewsPage()),
                   _buildMenuItem(
-                      'News', Icons.article, context, const Articles()),
-                  _buildMenuItem(
-                      'Media', Icons.photo_library, context, const Articles()),
+                      'Media', Icons.photo_library, context, const MediaPage()),
                   _buildMenuItem('Contact Us', Icons.contact_mail, context,
-                      const Articles()),
+                      const ContactUsPage()),
                 ],
               ),
             ],

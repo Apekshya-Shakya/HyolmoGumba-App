@@ -71,42 +71,41 @@ class MembersPage extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        
-        title: const Text('Organization Members', style: TextStyle(color: Colors.white),),
+        title: const Text(
+          'Organization Members',
+          style: TextStyle(color: Colors.white),
+        ),
         backgroundColor: AppStyles.primaryColor,
-          iconTheme: const IconThemeData(color: Colors.white),
+        iconTheme: const IconThemeData(color: Colors.white),
       ),
       backgroundColor: AppStyles.backgroundColor,
-      
-     
-      body: 
-      Padding(
+      body: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Column(
           children: [
             // Search bar
             const Padding(
               padding: EdgeInsets.all(8.0),
-               child:  TextField(
-                  decoration: InputDecoration(
-                    hintText: 'Search',
-                    hintStyle: TextStyle(color: Colors.grey),
-                    suffixIcon: Icon(Icons.search),
-                    filled: true,
-                    fillColor: Colors.white,
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.all(Radius.circular(5)),
-                      borderSide: BorderSide.none,
-                    ),
+              child: TextField(
+                decoration: InputDecoration(
+                  hintText: 'Search',
+                  hintStyle: TextStyle(color: Colors.grey),
+                  suffixIcon: Icon(Icons.search),
+                  filled: true,
+                  fillColor: Colors.white,
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.all(Radius.circular(5)),
+                    borderSide: BorderSide.none,
                   ),
                 ),
+              ),
             ),
             // Members list
             Expanded(
               child: ListView.builder(
                 itemCount: members.length,
                 itemBuilder: (context, index) {
-                  final  member = members[index];
+                  final member = members[index];
                   return Card(
                     margin:
                         const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
@@ -122,8 +121,8 @@ class MembersPage extends StatelessWidget {
                           Text('Post: ${member['post']}'),
                           Text(
                             'Village: ${member['village']}',
-                            style:
-                                TextStyle(color: Colors.grey[600], fontSize: 12),
+                            style: TextStyle(
+                                color: Colors.grey[600], fontSize: 12),
                           ),
                         ],
                       ),
@@ -159,11 +158,13 @@ class MemberDetailPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(member['name']!, style: const TextStyle(color: Colors.white),),
+        title: Text(
+          member['name']!,
+          style: const TextStyle(color: Colors.white),
+        ),
         backgroundColor: AppStyles.primaryColor,
-          iconTheme: const IconThemeData(color: Colors.white),
+        iconTheme: const IconThemeData(color: Colors.white),
       ),
-      
       body: Column(
         children: [
           // Top section with image

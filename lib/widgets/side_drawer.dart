@@ -4,7 +4,6 @@ import 'package:hyolmo/pages/Flow_Pages/account_settings_page.dart';
 import 'package:hyolmo/pages/Flow_Pages/faq_page.dart';
 import 'package:hyolmo/pages/Flow_Pages/support_page.dart';
 import 'package:hyolmo/pages/login_page.dart';
-import 'package:hyolmo/pages/settings.dart';
 
 import '../pages/members.dart';
 // import 'package:url_launcher/url_launcher.dart';
