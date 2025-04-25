@@ -5,22 +5,29 @@ import 'package:hyolmo/pages/signup.dart';
 import 'package:hyolmo/widgets/custom_appbar.dart';
 import 'package:hyolmo/widgets/side_drawer.dart';
 
+
 class OptionsPage extends StatelessWidget {
   const OptionsPage({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final screenWidth = MediaQuery.of(context).size.width;
+    final isTablet = screenWidth >= 600;
+
     return Scaffold(
       appBar: const CustomAppBar(title: ""),
       endDrawer: const SideDrawer(),
-      backgroundColor: AppStyles.backgroundColor,
+      backgroundColor: Colors.white,
       body: SafeArea(
         child: Column(
           children: [
             const SizedBox(height: 20),
-            const Text(
+            Text(
               "Membership",
-              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 24),
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+                fontSize: isTablet ? 28 : 22,
+              ),
               textAlign: TextAlign.center,
             ),
             const SizedBox(height: 20),
@@ -29,58 +36,85 @@ class OptionsPage extends StatelessWidget {
                 padding: const EdgeInsets.symmetric(horizontal: 16.0),
                 child: Column(
                   children: [
-                    _buildMenuItem(
-                      'Previous Committee',
-                      Icons.history,
-                      context,
-                      const MembersPage(),
-                      isLarge: true,
-                    ),
-                    const SizedBox(height: 10),
-                    Row(
+                    // Previous Committee - Full Width
+                    // _buildMenuItem(
+                    //   title: 'Previous Committee',
+                    //   icon: Icons.timeline,
+                    //   context: context,
+                    //   page: const MembersPage(),
+                    //   height: 120,
+                    //   color: Colors.purple.shade50,
+                    // ),
+                    // const SizedBox(height: 12),
+                     Row(
                       children: [
                         Expanded(
                           child: _buildMenuItem(
-                            'Household Members',
-                            Icons.home,
-                            context,
-                            const MembersPage(),
-                          ),
-                        ),
-                        const SizedBox(width: 10),
-                        Expanded(
-                          child: _buildMenuItem(
-                            'Institutional Members',
-                            Icons.apartment,
-                            context,
-                            const MembersPage(),
+                            title: 'Previous Committee',
+                            icon: Icons.document_scanner,
+                            context: context,
+                            page: const MembersPage(),
+                            height: 150,
+                            color: Colors.pink.shade50,
                           ),
                         ),
                       ],
                     ),
-                    const SizedBox(height: 10),
+                    const SizedBox(height: 16),
+                    // First row with 2 items
                     Row(
                       children: [
                         Expanded(
                           child: _buildMenuItem(
-                            'Life Members',
-                            Icons.directions_bike, // Update icon if needed
-                            context,
-                            const MembersPage(),
+                            title: 'Household Members',
+                            icon: Icons.family_restroom,
+                            context: context,
+                            page: const MembersPage(),
+                            height: 150,
+                            color: Colors.teal.shade50,
                           ),
                         ),
-                        const SizedBox(width: 10),
+                        const SizedBox(width: 12),
                         Expanded(
                           child: _buildMenuItem(
-                            'General Members',
-                            Icons.groups,
-                            context,
-                            const MembersPage(),
+                            title: 'Institutional Members',
+                            icon: Icons.account_balance,
+                            context: context,
+                            page: const MembersPage(),
+                            height: 150,
+                            color: Colors.orange.shade50,
                           ),
                         ),
                       ],
                     ),
-                    const SizedBox(height: 20),
+                    const SizedBox(height: 12),
+
+                    // Second row with 2 items
+                    Row(
+                      children: [
+                        Expanded(
+                          child: _buildMenuItem(
+                            title: 'Life Members',
+                            icon: Icons.emoji_events,
+                            context: context,
+                            page: const MembersPage(),
+                            height: 150,
+                            color: Colors.green.shade50,
+                          ),
+                        ),
+                        const SizedBox(width: 12),
+                        Expanded(
+                          child: _buildMenuItem(
+                            title: 'General Members',
+                            icon: Icons.people_alt,
+                            context: context,
+                            page: const MembersPage(),
+                            height: 150,
+                            color: Colors.blue.shade50,
+                          ),
+                        ),
+                      ],
+                    ),
                   ],
                 ),
               ),
@@ -93,23 +127,22 @@ class OptionsPage extends StatelessWidget {
                   onPressed: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(
-                          builder: (context) => const SignUpPage()),
+                      MaterialPageRoute(builder: (context) => const SignUpPage()),
                     );
                   },
                   style: ElevatedButton.styleFrom(
-                    elevation: 0,
                     backgroundColor: const Color(0xFF4A0E0E),
                     padding: const EdgeInsets.symmetric(vertical: 16),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(12),
                     ),
+                    elevation: 3,
                   ),
-                  child: const Text(
+                  child: Text(
                     "Become a Member",
                     style: TextStyle(
                       color: Colors.white,
-                      fontSize: 16,
+                      fontSize: isTablet ? 18 : 16,
                       fontWeight: FontWeight.w600,
                     ),
                   ),
@@ -122,32 +155,29 @@ class OptionsPage extends StatelessWidget {
     );
   }
 
-  Widget _buildMenuItem(
-    String title,
-    IconData icon,
-    BuildContext context,
-    Widget page, {
-    bool isLarge = false,
+  Widget _buildMenuItem({
+    required String title,
+    required IconData icon,
+    required BuildContext context,
+    required Widget page,
+    double height = 100,
+    Color color = Colors.white,
   }) {
     return GestureDetector(
       onTap: () {
-        Navigator.push(
-          context,
-          MaterialPageRoute(builder: (context) => page),
-        );
+        Navigator.push(context, MaterialPageRoute(builder: (context) => page));
       },
       child: Container(
-        width: double.infinity,
-        height: isLarge ? 120 : 100,
+        height: height,
+        margin: const EdgeInsets.symmetric(vertical: 4),
         decoration: BoxDecoration(
-          color: Colors.white,
-          borderRadius: BorderRadius.circular(10),
+          color: color,
+          borderRadius: BorderRadius.circular(16),
           boxShadow: [
             BoxShadow(
-              color: Colors.grey.withOpacity(0.3),
-              spreadRadius: 2,
-              blurRadius: 6,
-              offset: const Offset(0, 3), // Shadow position
+              color: Colors.black.withOpacity(0.05),
+              blurRadius: 10,
+              offset: const Offset(0, 4),
             ),
           ],
         ),
@@ -155,13 +185,16 @@ class OptionsPage extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Icon(icon, color: Colors.black, size: 30),
-            const SizedBox(height: 8),
+            Icon(icon, size: 32, color: Colors.black87),
+            const SizedBox(height: 10),
             Text(
               title,
               textAlign: TextAlign.center,
-              style: const TextStyle(color: Colors.black, fontSize: 14),
-              overflow: TextOverflow.ellipsis,
+              style: const TextStyle(
+                fontSize: 14,
+                fontWeight: FontWeight.w600,
+                color: Colors.black87,
+              ),
             ),
           ],
         ),
