@@ -60,7 +60,7 @@ class Events extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 8),
               child: Text(
-                "Event Name",
+                "Annual Puja Celebration",
                 style: AppStyles.text,
               ),
             ),
@@ -70,7 +70,7 @@ class Events extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 8),
               child: Text(
-                "Event Description",
+                "Join us for the Annual Puja Ceremony at the monastery. ",
                 style: AppStyles.subtext,
               ),
             ),

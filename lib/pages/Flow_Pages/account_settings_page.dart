@@ -10,8 +10,8 @@ class AccountSettingsPage extends StatefulWidget {
 }
 
 class _AccountSettingsPageState extends State<AccountSettingsPage> {
-  String _username = "Apekshya Shakya";
-  String _email = "apekshya.shakya20@gmail.com";
+  String _username = "Dawa Dorje Sherpa";
+  String _email = "dawadsherpa@gmail.com";
   String _password = "********";
   String _phone = "+977-98XXXXXXXX";
 
