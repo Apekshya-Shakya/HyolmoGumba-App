@@ -30,22 +30,24 @@ class HomeScreen extends StatelessWidget {
               const SizedBox(height: 30),
 
               Container(
+                color: const Color.fromARGB(255, 64, 110, 153),
                 padding:
                     const EdgeInsets.symmetric(horizontal: 16, vertical: 20),
-                decoration: BoxDecoration(
-                  color:
-                      const Color.fromARGB(255, 2, 21, 41), // Background color
-                  image: DecorationImage(
-                    image: const AssetImage(
-                        "assets/images/gumba.jpeg"), // Background image
-                    fit: BoxFit.cover,
-                    colorFilter: ColorFilter.mode(
-                      const Color.fromARGB(250, 1, 61, 114)
-                          .withOpacity(1), // Dark overlay
-                      BlendMode.darken,
-                    ),
-                  ),
-                ),
+                    
+                // decoration: BoxDecoration(
+                //   color:
+                //       const Color.fromARGB(255, 2, 21, 41), // Background color
+                //   image: DecorationImage(
+                //     image: const AssetImage(
+                //         "assets/images/gumba.jpeg"), // Background image
+                //     fit: BoxFit.cover,
+                //     colorFilter: ColorFilter.mode(
+                //       const Color.fromARGB(250, 1, 61, 114)
+                //           .withOpacity(1), // Dark overlay
+                //       BlendMode.darken,
+                //     ),
+                //   ),
+                // ),
                 child: const Column(
                   mainAxisSize: MainAxisSize.min,
                   crossAxisAlignment: CrossAxisAlignment.center,
