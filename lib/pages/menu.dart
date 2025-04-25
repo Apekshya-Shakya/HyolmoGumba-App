@@ -57,19 +57,19 @@ class MenuPage extends StatelessWidget {
       ),
       child: Column(
         children: [
-          _buildMenuItem('About Us', Icons.account_balance, context, const AboutUsPage()),
+          _buildMenuItem('About Us', Icons.info_outline, context, const AboutUsPage()),
           const Divider(),
-          _buildMenuItem('Hyolmo', Icons.terrain, context, const HyolmoPage()),
+          _buildMenuItem('Hyolmo', Icons.account_balance, context, const HyolmoPage()),
           const Divider(),
-          _buildMenuItem('Membership', Icons.verified_user, context, const MembersMenuPage()),
+          _buildMenuItem('Membership', Icons.people_alt_outlined, context, const MembersMenuPage()),
           const Divider(),
-          _buildMenuItem('Activities', Icons.local_activity, context, const ActivitiesPage()),
+          _buildMenuItem('Activities', Icons.volunteer_activism_outlined, context, const ActivitiesPage()),
           const Divider(),
           _buildMenuItem('News', Icons.newspaper, context, const NewsPage()),
           const Divider(),
           _buildMenuItem('Media', Icons.perm_media, context, const MediaPage()),
           const Divider(),
-          _buildMenuItem('Contact Us', Icons.support_agent, context, const ContactUsPage()),
+          _buildMenuItem('Contact Us', Icons.mail, context, const ContactUsPage()),
         ],
       ),
     );
@@ -78,7 +78,7 @@ class MenuPage extends StatelessWidget {
   Widget _buildMenuItem(String title, IconData icon, BuildContext context, Widget page) {
     return ListTile(
       contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-      leading: Icon(icon, color: AppStyles.bottomBtnColor),
+      leading: Icon(icon, color: AppStyles.textBlack),
       title: Text(
         title,
         style: const TextStyle(fontSize: 18, fontWeight: FontWeight.w500),

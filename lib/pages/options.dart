@@ -51,7 +51,7 @@ class OptionsPage extends StatelessWidget {
                         Expanded(
                           child: _buildMenuItem(
                             title: 'Previous Committee',
-                            icon: Icons.document_scanner,
+                            icon: Icons.emoji_people_outlined,
                             context: context,
                             page: const MembersPage(),
                             height: 150,

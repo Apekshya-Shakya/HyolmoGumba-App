@@ -75,7 +75,7 @@ class _SignUpPageState extends State<SignUpPage> {
       appBar: AppBar(
         backgroundColor: AppStyles.primaryColor,
         title: const Text(
-          "Sign Up",
+          "Create Your Account",
           style: TextStyle(color: Colors.white),
         ),
         iconTheme: const IconThemeData(color: Colors.white),
@@ -83,11 +83,13 @@ class _SignUpPageState extends State<SignUpPage> {
       body: SafeArea(
         child: SingleChildScrollView(
           padding: const EdgeInsets.all(24.0),
+          
           child: Form(
             key: _formKey,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
+               // Text("Create your account", style: TextStyle(fontSize: 24,),),
                 const SizedBox(height: 10),
 
                 TextFormField(
