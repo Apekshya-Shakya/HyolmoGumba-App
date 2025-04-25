@@ -15,22 +15,22 @@ class OptionsPage extends StatelessWidget {
     final isTablet = screenWidth >= 600;
 
     return Scaffold(
-      appBar: const CustomAppBar(title: ""),
+      appBar: const CustomAppBar(title: "Membership"),
       endDrawer: const SideDrawer(),
       backgroundColor: Colors.white,
       body: SafeArea(
         child: Column(
           children: [
             const SizedBox(height: 20),
-            Text(
-              "Membership",
-              style: TextStyle(
-                fontWeight: FontWeight.bold,
-                fontSize: isTablet ? 28 : 22,
-              ),
-              textAlign: TextAlign.center,
-            ),
-            const SizedBox(height: 20),
+            // Text(
+            //   "Membership",
+            //   style: TextStyle(
+            //     fontWeight: FontWeight.bold,
+            //     fontSize: isTablet ? 28 : 22,
+            //   ),
+            //   textAlign: TextAlign.center,
+            // ),
+            // const SizedBox(height: 20),
             Expanded(
               child: SingleChildScrollView(
                 padding: const EdgeInsets.symmetric(horizontal: 16.0),
