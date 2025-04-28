@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 import 'package:hyolmo/constants/constant.dart';
 import 'package:hyolmo/pages/login_page.dart';
+import 'package:country_code_picker/country_code_picker.dart';
 
 class SignUpPage extends StatefulWidget {
   const SignUpPage({super.key});
@@ -17,202 +19,272 @@ class _SignUpPageState extends State<SignUpPage> {
     'General Members'
   ];
 
-  // Selected membership type
   String? selectedMembership;
+  DateTime? selectedDate;
+  String? selectedCountryCode = '+977';
+  final _formKey = GlobalKey<FormState>();
+
+  void _selectDate(BuildContext context) async {
+    final DateTime? picked = await showDatePicker(
+      context: context,
+      initialDate: DateTime(2000),
+      firstDate: DateTime(1900),
+      lastDate: DateTime.now(),
+    );
+    if (picked != null && picked != selectedDate) {
+      setState(() {
+        selectedDate = picked;
+      });
+    }
+  }
+
+  void _showConfirmationDialog() {
+    showDialog(
+      context: context,
+      builder: (context) => AlertDialog(
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
+        title: const Text("Registration Successful"),
+        content: const Text("Your account has been created successfully."),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.pushReplacement(
+              context,
+              MaterialPageRoute(builder: (context) => const LoginPage()),
+            ),
+            child: const Text("OK"),
+          )
+        ],
+      ),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
+      // appBar: AppBar(
+      //   backgroundColor: Colors.white,
+      //   elevation: 0,
+      //   title: const Text(
+      //     "Sign Up",
+      //     style: TextStyle(color: Colors.black, fontWeight: FontWeight.w600),
+      //   ),
+      //   centerTitle: true,
+      //   automaticallyImplyLeading: true,
+      // ),
       appBar: AppBar(
         backgroundColor: AppStyles.primaryColor,
-        elevation: 0,
+        title: const Text(
+          "Sign Up",
+          style: TextStyle(color: Colors.white),
+        ),
         iconTheme: const IconThemeData(color: Colors.white),
       ),
-      backgroundColor: AppStyles.backgroundColor,
-      body: SingleChildScrollView(
-        child: Padding(
-          padding: const EdgeInsets.all(20.0),
-          child: Column(
-            children: [
-              // Title
-              const Text(
-                "Create an Account",
-                style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
-              ),
-              const SizedBox(height: 20),
+      body: SafeArea(
+        child: SingleChildScrollView(
+          padding: const EdgeInsets.all(24.0),
+          child: Form(
+            key: _formKey,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                const SizedBox(height: 10),
 
-              // Form
-              Form(
-                child: Column(
+                TextFormField(
+                  decoration: const InputDecoration(
+                    labelText: "First Name",
+                    prefixIcon: Icon(Icons.person_outline),
+                    border: InputBorder.none,
+                    filled: true,
+                    fillColor: Color(0xFFF5F5F5),
+                  ),
+                ),
+                const SizedBox(height: 15),
+
+                TextFormField(
+                  decoration: const InputDecoration(
+                    labelText: "Last Name",
+                    prefixIcon: Icon(Icons.person_outline),
+                    border: InputBorder.none,
+                    filled: true,
+                    fillColor: Color(0xFFF5F5F5),
+                  ),
+                ),
+                const SizedBox(height: 15),
+
+                TextFormField(
+                  decoration: const InputDecoration(
+                    labelText: "Username",
+                    prefixIcon: Icon(Icons.account_circle_outlined),
+                    border: InputBorder.none,
+                    filled: true,
+                    fillColor: Color(0xFFF5F5F5),
+                  ),
+                ),
+                const SizedBox(height: 15),
+
+                TextFormField(
+                  decoration: const InputDecoration(
+                    labelText: "Email",
+                    prefixIcon: Icon(Icons.email_outlined),
+                    border: InputBorder.none,
+                    filled: true,
+                    fillColor: Color(0xFFF5F5F5),
+                  ),
+                ),
+                const SizedBox(height: 15),
+
+                Row(
                   children: [
-                    Row(
-                      children: [
-                        Expanded(
-                          child: TextFormField(
-                            decoration: InputDecoration(
-                              prefixIcon: const Icon(Icons.account_circle),
-                              labelText: "First name",
-                              border: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(10),
-                              ),
-                            ),
-                          ),
-                        ),
-                        const SizedBox(width: 15),
-                        Expanded(
-                          child: TextFormField(
-                            decoration: InputDecoration(
-                              prefixIcon: const Icon(Icons.account_circle),
-                              labelText: "Last Name",
-                              border: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(10),
-                              ),
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                    const SizedBox(height: 15),
-                    TextFormField(
-                      decoration: InputDecoration(
-                        labelText: "Username",
-                        prefixIcon: const Icon(Icons.account_circle_rounded),
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(10),
-                        ),
-                      ),
-                    ),
-                    const SizedBox(height: 15),
-                    TextFormField(
-                      decoration: InputDecoration(
-                        labelText: "Email",
-                        prefixIcon: const Icon(Icons.email),
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(10),
-                        ),
-                      ),
-                    ),
-                    const SizedBox(height: 15),
-                    TextFormField(
-                      decoration: InputDecoration(
-                        labelText: "Phone Number",
-                        prefixIcon: const Icon(Icons.phone),
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(10),
-                        ),
-                      ),
-                    ),
-                    const SizedBox(height: 15),
-
-                    // Dropdown for Type of Membership
-                    DropdownButtonFormField<String>(
-                      decoration: InputDecoration(
-                        labelText: "Type of Membership",
-                        prefixIcon: const Icon(Icons.card_membership),
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(10),
-                        ),
-                      ),
-                      value: selectedMembership,
-                      items: membershipTypes
-                          .map((type) => DropdownMenuItem(
-                                value: type,
-                                child: Text(type),
-                              ))
-                          .toList(),
-                      onChanged: (value) {
+                    CountryCodePicker(
+                      onChanged: (code) {
                         setState(() {
-                          selectedMembership = value;
+                          selectedCountryCode = code.dialCode;
                         });
                       },
+                      initialSelection: 'NP',
+                      favorite: ['+977', 'IN'],
+                      showFlagMain: true,
+                      showFlag: true,
+                      showDropDownButton: true,
                     ),
-                    const SizedBox(height: 15),
-
-                    TextFormField(
-                      decoration: InputDecoration(
-                        labelText: "Password",
-                        prefixIcon: const Icon(Icons.lock),
-                        suffixIcon: const Icon(Icons.password),
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(10),
-                        ),
-                      ),
-                    ),
-                    const SizedBox(height: 20),
-                    Row(
-                      children: [
-                        SizedBox(
-                          width: 24,
-                          height: 24,
-                          child: Checkbox(value: true, onChanged: (value) {}),
-                        ),
-                        const SizedBox(width: 20),
-                        const Text.rich(
-                          TextSpan(
-                            children: [
-                              TextSpan(
-                                text: "I agree to ",
-                                style: TextStyle(fontSize: 14),
-                              ),
-                              TextSpan(
-                                text: "Privacy Policy",
-                                style: TextStyle(
-                                  fontSize: 14,
-                                  color: Colors.blue,
-                                  decoration: TextDecoration.underline,
-                                ),
-                              ),
-                              TextSpan(
-                                text: " and ",
-                                style: TextStyle(fontSize: 14),
-                              ),
-                              TextSpan(
-                                text: "Terms & Conditions",
-                                style: TextStyle(
-                                  fontSize: 14,
-                                  color: Colors.blue,
-                                  decoration: TextDecoration.underline,
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ],
-                    ),
-                    const SizedBox(height: 20),
-                    SizedBox(
-                      width: double.infinity,
-                      child: ElevatedButton(
-                        onPressed: () {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => const LoginPage()));
-                        },
-                        style: ElevatedButton.styleFrom(
-                          elevation: 0,
-                          backgroundColor: Colors.blue,
-                          disabledBackgroundColor: Colors.grey,
-                          side: const BorderSide(color: Colors.blue),
-                          padding: const EdgeInsets.symmetric(vertical: 18),
-                          textStyle: const TextStyle(
-                            fontSize: 16,
-                            fontWeight: FontWeight.w600,
-                          ),
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(12),
-                          ),
-                        ),
-                        child: const Text(
-                          "Create an Account",
-                          style: TextStyle(color: Colors.white),
+                    const SizedBox(width: 10),
+                    Expanded(
+                      child: TextFormField(
+                        keyboardType: TextInputType.phone,
+                        decoration: const InputDecoration(
+                          labelText: "Phone Number",
+                          prefixIcon: Icon(Icons.phone),
+                          border: InputBorder.none,
+                          filled: true,
+                          fillColor: Color(0xFFF5F5F5),
                         ),
                       ),
                     ),
                   ],
                 ),
-              ),
-            ],
+                const SizedBox(height: 15),
+
+                TextFormField(
+                  readOnly: true,
+                  onTap: () => _selectDate(context),
+                  decoration: InputDecoration(
+                    labelText: "Date of Birth",
+                    prefixIcon: const Icon(Icons.calendar_today),
+                    border: InputBorder.none,
+                    filled: true,
+                    fillColor: const Color(0xFFF5F5F5),
+                    hintText: selectedDate != null
+                        ? DateFormat('yyyy-MM-dd').format(selectedDate!)
+                        : "Select your birth date",
+                  ),
+                ),
+                const SizedBox(height: 15),
+
+                DropdownButtonFormField<String>(
+                  decoration: const InputDecoration(
+                    labelText: "Membership Type",
+                    prefixIcon: Icon(Icons.card_membership_outlined),
+                    border: InputBorder.none,
+                    filled: true,
+                    fillColor: Color(0xFFF5F5F5),
+                  ),
+                  value: selectedMembership,
+                  items: membershipTypes
+                      .map((type) => DropdownMenuItem(
+                            value: type,
+                            child: Text(type),
+                          ))
+                      .toList(),
+                  onChanged: (value) {
+                    setState(() {
+                      selectedMembership = value;
+                    });
+                  },
+                ),
+                const SizedBox(height: 15),
+
+                TextFormField(
+                  obscureText: true,
+                  decoration: const InputDecoration(
+                    labelText: "Password",
+                    prefixIcon: Icon(Icons.lock_outline),
+                    border: InputBorder.none,
+                    filled: true,
+                    fillColor: Color(0xFFF5F5F5),
+                  ),
+                ),
+                const SizedBox(height: 15),
+
+                TextFormField(
+                  obscureText: true,
+                  decoration: const InputDecoration(
+                    labelText: "Confirm Password",
+                    prefixIcon: Icon(Icons.lock_outline),
+                    border: InputBorder.none,
+                    filled: true,
+                    fillColor: Color(0xFFF5F5F5),
+                  ),
+                ),
+                const SizedBox(height: 20),
+
+                Row(
+                  children: [
+                    Checkbox(value: true, onChanged: (val) {}),
+                    const Flexible(
+                      child: Text.rich(
+                        TextSpan(
+                          children: [
+                            TextSpan(text: "I agree to the "),
+                            TextSpan(
+                              text: "Privacy Policy",
+                              style: TextStyle(
+                                color: Colors.blue,
+                                decoration: TextDecoration.underline,
+                              ),
+                            ),
+                            TextSpan(text: " and "),
+                            TextSpan(
+                              text: "Terms & Conditions",
+                              style: TextStyle(
+                                color: Colors.blue,
+                                decoration: TextDecoration.underline,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    )
+                  ],
+                ),
+                const SizedBox(height: 20),
+
+                SizedBox(
+                  width: double.infinity,
+                  child: ElevatedButton(
+                    onPressed: () {
+                      if (_formKey.currentState!.validate()) {
+                        _showConfirmationDialog();
+                      }
+                    },
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.black,
+                      padding: const EdgeInsets.symmetric(vertical: 18),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(12),
+                      ),
+                    ),
+                    child: const Text(
+                      "Create an Account",
+                      style: TextStyle(
+                        fontSize: 16,
+                        color: Colors.white,
+                      ),
+                    ),
+                  ),
+                )
+              ],
+            ),
           ),
         ),
       ),
