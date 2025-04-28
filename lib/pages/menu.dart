@@ -25,20 +25,7 @@ class MenuPage extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              // const TextField(
-              //   decoration: InputDecoration(
-              //     hintText: 'Search',
-              //     hintStyle: TextStyle(color: Colors.grey),
-              //     suffixIcon: Icon(Icons.search),
-              //     filled: true,
-              //     fillColor: Colors.white,
-              //     border: OutlineInputBorder(
-              //       borderRadius: BorderRadius.all(Radius.circular(5)),
-              //       borderSide: BorderSide.none,
-              //     ),
-              //   ),
-              // ),
-              const SizedBox(height: 20),
+              // const SizedBox(height: 20),
               const Text(
                 "Menu",
                 style: TextStyle(fontWeight: FontWeight.bold, fontSize: 24),
@@ -46,25 +33,8 @@ class MenuPage extends StatelessWidget {
               ),
               const SizedBox(height: 20),
 
-              // Menu Items with navigation
-              Column(
-                children: [
-                  _buildMenuItem(
-                      'About Us', Icons.info, context, const AboutUsPage()),
-                  _buildMenuItem(
-                      'Hyolmo', Icons.language, context, const HyolmoPage()),
-                  _buildMenuItem('Membership', Icons.person_add, context,
-                      const MembersMenuPage()),
-                  _buildMenuItem('Activities', Icons.event, context,
-                      const ActivitiesPage()),
-                  _buildMenuItem(
-                      'News', Icons.article, context, const NewsPage()),
-                  _buildMenuItem(
-                      'Media', Icons.photo_library, context, const MediaPage()),
-                  _buildMenuItem('Contact Us', Icons.contact_mail, context,
-                      const ContactUsPage()),
-                ],
-              ),
+              // Menu Items
+              _buildMenuCard(context),
             ],
           ),
         ),
@@ -72,14 +42,48 @@ class MenuPage extends StatelessWidget {
     );
   }
 
-  Widget _buildMenuItem(
-      String title, IconData icon, BuildContext context, Widget page) {
+  Widget _buildMenuCard(BuildContext context) {
+    return Container(
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(12),
+        boxShadow: const [
+          BoxShadow(
+            color: Colors.black12,
+            blurRadius: 6,
+            offset: Offset(0, 2),
+          ),
+        ],
+      ),
+      child: Column(
+        children: [
+          _buildMenuItem('About Us', Icons.account_balance, context, const AboutUsPage()),
+          const Divider(),
+          _buildMenuItem('Hyolmo', Icons.terrain, context, const HyolmoPage()),
+          const Divider(),
+          _buildMenuItem('Membership', Icons.verified_user, context, const MembersMenuPage()),
+          const Divider(),
+          _buildMenuItem('Activities', Icons.local_activity, context, const ActivitiesPage()),
+          const Divider(),
+          _buildMenuItem('News', Icons.newspaper, context, const NewsPage()),
+          const Divider(),
+          _buildMenuItem('Media', Icons.perm_media, context, const MediaPage()),
+          const Divider(),
+          _buildMenuItem('Contact Us', Icons.support_agent, context, const ContactUsPage()),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildMenuItem(String title, IconData icon, BuildContext context, Widget page) {
     return ListTile(
+      contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
       leading: Icon(icon, color: AppStyles.bottomBtnColor),
       title: Text(
         title,
         style: const TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
       ),
+      trailing: const Icon(Icons.arrow_forward_ios, size: 16),
       onTap: () {
         Navigator.push(
           context,
