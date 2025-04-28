@@ -16,7 +16,7 @@ class MenuPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const CustomAppBar(title: ""),
+      appBar: const CustomAppBar(title: "Menu",),
       endDrawer: const SideDrawer(),
       backgroundColor: AppStyles.backgroundColor,
       body: SingleChildScrollView(
@@ -26,12 +26,12 @@ class MenuPage extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               // const SizedBox(height: 20),
-              const Text(
-                "Menu",
-                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 24),
-                textAlign: TextAlign.center,
-              ),
-              const SizedBox(height: 20),
+              // const Text(
+              //   "Menu",
+              //   style: TextStyle(fontWeight: FontWeight.bold, fontSize: 24),
+              //   textAlign: TextAlign.center,
+              // ),
+              // const SizedBox(height: 20),
 
               // Menu Items
               _buildMenuCard(context),

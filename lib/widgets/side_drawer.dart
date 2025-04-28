@@ -35,8 +35,8 @@ class SideDrawer extends StatelessWidget {
                 decoration: BoxDecoration(color: AppStyles.primaryColor),
                   
                     
-                accountName: const Text("Apekshya Shakya"),
-                accountEmail: const Text("apekshya.shakya20@gmail.com"),
+                accountName: const Text("Dawa Dorje Lama"),
+                accountEmail: const Text("dawadorje.lama@gmail.com"),
                 currentAccountPicture: const CircleAvatar(
                   child: Text("A"),
                 ),
@@ -48,9 +48,12 @@ class SideDrawer extends StatelessWidget {
                 onTap: () {
   final member = {
     'photo': 'assets/members/dawa_lama.jpg',
-    'name': 'Apekshya Shakya',
+    'name': 'Dawa Dorje Lama',
     'post': 'Member',
-    'village': 'Kathmandu',
+    'address': 'Kathmandu',
+    'phone': '9841774567',
+    'type': 'Life Member'
+
   };
 
   Navigator.push(
