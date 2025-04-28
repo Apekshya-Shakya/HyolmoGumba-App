@@ -1,9 +1,12 @@
+
+
 import 'package:flutter/material.dart';
 import 'package:hyolmo/constants/constant.dart';
 import 'package:hyolmo/widgets/custom_appbar.dart';
 import 'package:hyolmo/widgets/events.dart';
 import 'package:hyolmo/widgets/side_drawer.dart';
 import 'package:hyolmo/widgets/title_view.dart';
+import 'package:hyolmo/widgets/youtube_player_widget.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -23,9 +26,7 @@ class HomeScreen extends StatelessWidget {
             children: [
               //Gallery section
 
-              Image.asset(
-                'assets/images/aani.jpg',
-              ),
+             YouTubeVideoPlayer(),
               const SizedBox(height: 30),
 
               Container(
