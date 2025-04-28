@@ -59,9 +59,9 @@ class _BottomNavBarState extends State<BottomNavBar> {
           //     label: 'Menu'),
           BottomNavigationBarItem(
               icon: Icon(
-                Icons.account_circle_sharp,
+                Icons.people_alt_outlined,
               ),
-              label: 'Account'),
+              label: 'Membership'),
           BottomNavigationBarItem(icon: Icon(Icons.menu), label: 'Menu'),
         ],
       ),

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:hyolmo/pages/home.dart';
+import 'package:hyolmo/widgets/main_layout.dart';
 
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   final String? title;
@@ -13,22 +15,32 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      backgroundColor: Color.fromARGB(255, 44, 11, 14),
+      backgroundColor: const Color.fromARGB(255, 44, 11, 14),
       elevation: 2.0,
       leading: Padding(
         padding: const EdgeInsets.all(8.0),
-        child: Image.asset(
-          'assets/images/logo.png',
-          height: 40,
+        child: GestureDetector(
+          onTap: () {
+            Navigator.pushAndRemoveUntil(
+              context,
+              MaterialPageRoute(builder: (context) => const MainLayout()),
+              (route) => false,
+            );
+          },
+          child: Image.asset(
+            'assets/images/logo.png',
+            height: 40,
+          ),
         ),
       ),
       title: title != null
           ? Text(
               title!,
               style: const TextStyle(
-                  color: Colors.black,
-                  fontSize: 18,
-                  fontWeight: FontWeight.bold),
+                color: Colors.black,
+                fontSize: 18,
+                fontWeight: FontWeight.bold,
+              ),
             )
           : null,
       centerTitle: true,
@@ -38,8 +50,11 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
             padding: const EdgeInsets.all(8.0),
             child: Builder(
               builder: (context) => IconButton(
-                icon: const Icon(Icons.account_circle,
-                    size: 30, color: Colors.white),
+                icon: const Icon(
+                  Icons.account_circle,
+                  size: 30,
+                  color: Colors.white,
+                ),
                 onPressed: () {
                   Scaffold.of(context).openEndDrawer();
                 },

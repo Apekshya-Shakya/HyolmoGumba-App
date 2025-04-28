@@ -1,10 +1,11 @@
-flutter native_splash:
-  color: "#FFFFFF"
-  image: assets/images/logo.png
-  android: true
-  ios: true
+# flutter native_splash:
+#   color: "#FFFFFF"
+#   image: assets/images/logo.png
+#   text: "Hyolmo Social Service Center"
+#   android: true
+#   ios: true
 
 
 
   ## dart run flutter_native_splash:create
-  ## dart run flutter_native_splash:remove
+  # dart run flutter_native_splash:remove
