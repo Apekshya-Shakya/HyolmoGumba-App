@@ -207,6 +207,18 @@ class _SignUpPageState extends State<SignUpPage> {
                 const SizedBox(height: 15),
 
                 TextFormField(
+                  decoration: const InputDecoration(
+                    labelText: "Citizenship number",
+                    prefixIcon: Icon(Icons.card_membership_rounded),
+                    border: InputBorder.none,
+                    filled: true,
+                    fillColor: Color(0xFFF5F5F5),
+                  ),
+                ),
+                const SizedBox(height: 15),
+
+
+                TextFormField(
                   obscureText: true,
                   decoration: const InputDecoration(
                     labelText: "Password",

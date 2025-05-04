@@ -21,14 +21,15 @@ class _LoginPageState extends State<LoginPage> {
       backgroundColor: AppStyles.mainWhite,
       body: SafeArea(
         child: SingleChildScrollView(
-          padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 40),
+          padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 60),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               const Center(
                 child: Column(
+                  
                   children: [
-                    SizedBox(height: 20,),
+                    SizedBox(height: 80,),
                     Image(
                       image: AssetImage('assets/images/logo.png'),
                       height: 150,
@@ -127,30 +128,30 @@ class _LoginPageState extends State<LoginPage> {
               const SizedBox(height: 16),
 
               // OR Divider
-              Row(
-                children: const [
-                  Expanded(child: Divider(thickness: 0.5)),
-                  Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 10),
-                    child: Text(
-                      "or sign in with",
-                      style: TextStyle(color: Colors.grey),
-                    ),
-                  ),
-                  Expanded(child: Divider(thickness: 0.5)),
-                ],
-              ),
-              const SizedBox(height: 20),
+              // Row(
+              //   children: const [
+              //     Expanded(child: Divider(thickness: 0.5)),
+              //     Padding(
+              //       padding: EdgeInsets.symmetric(horizontal: 10),
+              //       child: Text(
+              //         "or sign in with",
+              //         style: TextStyle(color: Colors.grey),
+              //       ),
+              //     ),
+              //     Expanded(child: Divider(thickness: 0.5)),
+              //   ],
+              // ),
+              // const SizedBox(height: 20),
 
-              // Social Media
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  _socialButton("assets/images/fb_logo.png"),
-                  const SizedBox(width: 20),
-                  _socialButton("assets/images/google_logo.png"),
-                ],
-              ),
+              // // Social Media
+              // Row(
+              //   mainAxisAlignment: MainAxisAlignment.center,
+              //   children: [
+              //     _socialButton("assets/images/fb_logo.png"),
+              //     const SizedBox(width: 20),
+              //     _socialButton("assets/images/google_logo.png"),
+              //   ],
+              // ),
               const SizedBox(height: 20),
 
               // Don't have account?

@@ -154,8 +154,8 @@ class HomeScreen extends StatelessWidget {
                     children: [
                       Viewtitle(
                         bigText: "Upcoming Events",
-                        smallText: "View all",
-                        func: () {},
+                        // smallText: "View all",
+                        // func: () {},
                       ),
                       const SizedBox(height: 10),
                       const SingleChildScrollView(
@@ -165,9 +165,10 @@ class HomeScreen extends StatelessWidget {
                             Events(),
                             Events(),
                             Events(),
-                            Events(),
-                            Events(),
-                            Events(),
+                          //   Events(),
+                          //   Events(),
+                          //   Events(),
+                          // 
                           ],
                         ),
                       ),

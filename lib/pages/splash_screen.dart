@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:hyolmo/constants/constant.dart';
 import 'package:hyolmo/core/bottom_nav_bar.dart';
+import 'package:hyolmo/pages/login_page.dart';
 // import 'core/bottom_nav_bar.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -20,7 +21,7 @@ class _SplashScreenState extends State<SplashScreen> {
     Future.delayed(const Duration(seconds: 2), () {
       Navigator.pushReplacement(
         context,
-        MaterialPageRoute(builder: (_) => const BottomNavBar()),
+        MaterialPageRoute(builder: (_) => const LoginPage()),
       );
     });
   }

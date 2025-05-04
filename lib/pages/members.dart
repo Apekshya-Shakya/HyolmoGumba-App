@@ -83,23 +83,23 @@ class MembersPage extends StatelessWidget {
         padding: const EdgeInsets.all(8.0),
         child: Column(
           children: [
-            // Search bar
-            const Padding(
-              padding: EdgeInsets.all(8.0),
-              child: TextField(
-                decoration: InputDecoration(
-                  hintText: 'Search',
-                  hintStyle: TextStyle(color: Colors.grey),
-                  suffixIcon: Icon(Icons.search),
-                  filled: true,
-                  fillColor: Colors.white,
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.all(Radius.circular(5)),
-                    borderSide: BorderSide.none,
-                  ),
-                ),
-              ),
-            ),
+            // // Search bar
+            // const Padding(
+            //   padding: EdgeInsets.all(8.0),
+            //   child: TextField(
+            //     decoration: InputDecoration(
+            //       hintText: 'Search',
+            //       hintStyle: TextStyle(color: Colors.grey),
+            //       suffixIcon: Icon(Icons.search),
+            //       filled: true,
+            //       fillColor: Colors.white,
+            //       border: OutlineInputBorder(
+            //         borderRadius: BorderRadius.all(Radius.circular(5)),
+            //         borderSide: BorderSide.none,
+            //       ),
+            //     ),
+            //   ),
+            // ),
             // Members list
             Expanded(
               child: ListView.builder(
