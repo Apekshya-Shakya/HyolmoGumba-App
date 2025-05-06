@@ -5,7 +5,6 @@ import 'package:hyolmo/pages/signup.dart';
 import 'package:hyolmo/widgets/custom_appbar.dart';
 import 'package:hyolmo/widgets/side_drawer.dart';
 
-
 class OptionsPage extends StatelessWidget {
   const OptionsPage({super.key});
 
@@ -46,7 +45,7 @@ class OptionsPage extends StatelessWidget {
                     //   color: Colors.purple.shade50,
                     // ),
                     // const SizedBox(height: 12),
-                     Row(
+                    Row(
                       children: [
                         Expanded(
                           child: _buildMenuItem(
@@ -119,36 +118,36 @@ class OptionsPage extends StatelessWidget {
                 ),
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.all(16.0),
-              child: SizedBox(
-                width: double.infinity,
-                child: ElevatedButton(
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => const SignUpPage()),
-                    );
-                  },
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: const Color(0xFF4A0E0E),
-                    padding: const EdgeInsets.symmetric(vertical: 16),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(12),
-                    ),
-                    elevation: 3,
-                  ),
-                  child: Text(
-                    "Become a Member",
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: isTablet ? 18 : 16,
-                      fontWeight: FontWeight.w600,
-                    ),
-                  ),
-                ),
-              ),
-            ),
+            // Padding(
+            //   padding: const EdgeInsets.all(16.0),
+            //   child: SizedBox(
+            //     width: double.infinity,
+            //     child: ElevatedButton(
+            //       onPressed: () {
+            //         Navigator.push(
+            //           context,
+            //           MaterialPageRoute(builder: (context) => const SignUpPage()),
+            //         );
+            //       },
+            //       style: ElevatedButton.styleFrom(
+            //         backgroundColor: const Color(0xFF4A0E0E),
+            //         padding: const EdgeInsets.symmetric(vertical: 16),
+            //         shape: RoundedRectangleBorder(
+            //           borderRadius: BorderRadius.circular(12),
+            //         ),
+            //         elevation: 3,
+            //       ),
+            //       child: Text(
+            //         "Become a Member",
+            //         style: TextStyle(
+            //           color: Colors.white,
+            //           fontSize: isTablet ? 18 : 16,
+            //           fontWeight: FontWeight.w600,
+            //         ),
+            //       ),
+            //     ),
+            //   ),
+            // ),
           ],
         ),
       ),

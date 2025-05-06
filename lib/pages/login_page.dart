@@ -27,9 +27,10 @@ class _LoginPageState extends State<LoginPage> {
             children: [
               const Center(
                 child: Column(
-                  
                   children: [
-                    SizedBox(height: 80,),
+                    SizedBox(
+                      height: 80,
+                    ),
                     Image(
                       image: AssetImage('assets/images/logo.png'),
                       height: 150,
@@ -56,21 +57,20 @@ class _LoginPageState extends State<LoginPage> {
               const SizedBox(height: 20),
 
               // Email
-               TextFormField(
-                  decoration: const InputDecoration(
-                    labelText: "Email Address",
-                    prefixIcon: Icon(Icons.email_outlined),
-                    border: InputBorder.none,
-                    filled: true,
-                    fillColor: Color(0xFFF5F5F5),
-                  ),
+              TextFormField(
+                decoration: const InputDecoration(
+                  labelText: "Username",
+                  prefixIcon: Icon(Icons.email_outlined),
+                  border: InputBorder.none,
+                  filled: true,
+                  fillColor: Color(0xFFF5F5F5),
                 ),
-              
-              
+              ),
+
               const SizedBox(height: 20),
 
               // Password
-             
+
               TextFormField(
                 obscureText: true,
                 decoration: InputDecoration(
@@ -78,8 +78,8 @@ class _LoginPageState extends State<LoginPage> {
                   prefixIcon: const Icon(Icons.lock_outline),
                   suffixIcon: const Icon(Icons.visibility_off),
                   border: InputBorder.none,
-                    filled: true,
-                    fillColor: Color(0xFFF5F5F5),
+                  filled: true,
+                  fillColor: Color(0xFFF5F5F5),
                 ),
               ),
               const SizedBox(height: 12),

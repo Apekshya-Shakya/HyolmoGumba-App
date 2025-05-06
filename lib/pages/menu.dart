@@ -8,7 +8,7 @@ import 'package:hyolmo/widgets/custom_appbar.dart';
 import 'package:hyolmo/widgets/side_drawer.dart';
 import 'package:hyolmo/pages/about_us.dart';
 import 'package:hyolmo/pages/media.dart';
-import 'package:hyolmo/pages/membership_menu.dart';
+// import 'package:hyolmo/pages/membership_menu.dart';
 
 class MenuPage extends StatelessWidget {
   const MenuPage({super.key});
@@ -16,7 +16,9 @@ class MenuPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const CustomAppBar(title: "Menu",),
+      appBar: const CustomAppBar(
+        title: "Menu",
+      ),
       endDrawer: const SideDrawer(),
       backgroundColor: AppStyles.backgroundColor,
       body: SingleChildScrollView(
@@ -57,25 +59,30 @@ class MenuPage extends StatelessWidget {
       ),
       child: Column(
         children: [
-          _buildMenuItem('About Us', Icons.info_outline, context, const AboutUsPage()),
+          _buildMenuItem(
+              'About Us', Icons.info_outline, context, const AboutUsPage()),
           const Divider(),
-          _buildMenuItem('Hyolmo', Icons.account_balance, context, const HyolmoPage()),
+          _buildMenuItem(
+              'Hyolmo', Icons.account_balance, context, const HyolmoPage()),
           const Divider(),
-          _buildMenuItem('Membership', Icons.people_alt_outlined, context, const MembersMenuPage()),
-          const Divider(),
-          _buildMenuItem('Activities', Icons.volunteer_activism_outlined, context, const ActivitiesPage()),
+          // _buildMenuItem('Membership', Icons.people_alt_outlined, context, const MembersMenuPage()),
+          // const Divider(),
+          _buildMenuItem('Activities', Icons.volunteer_activism_outlined,
+              context, const ActivitiesPage()),
           const Divider(),
           _buildMenuItem('News', Icons.newspaper, context, const NewsPage()),
           const Divider(),
           _buildMenuItem('Media', Icons.perm_media, context, const MediaPage()),
           const Divider(),
-          _buildMenuItem('Contact Us', Icons.mail, context, const ContactUsPage()),
+          _buildMenuItem(
+              'Contact Us', Icons.mail, context, const ContactUsPage()),
         ],
       ),
     );
   }
 
-  Widget _buildMenuItem(String title, IconData icon, BuildContext context, Widget page) {
+  Widget _buildMenuItem(
+      String title, IconData icon, BuildContext context, Widget page) {
     return ListTile(
       contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
       leading: Icon(icon, color: AppStyles.textBlack),
